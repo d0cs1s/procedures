@@ -183,9 +183,6 @@ S1(config-if)#switchport trunk allowed vlan 10,30,99,150
 S1(config-if)#end
 ```
 
-### Configuration de l'accès à distance sécurisé (ssh)
-
-
 ## Configuration d'un routeur
 ### Configuration de base
 
@@ -215,6 +212,10 @@ Création d'une route statique :
 ip route [network] [mask] [ip_interface]
 ```
 Pour atteindre le réseau [network] passer par [ip_interface]
+
+### Routage avec le protocol RIP
+
+//TODO
 
 ### Routage Inter-VLAN (router on a sitck)
 
