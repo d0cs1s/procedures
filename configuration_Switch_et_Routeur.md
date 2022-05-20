@@ -90,6 +90,9 @@ line vty 0 15
 exec-timeout [minutes]
 ```
 
+Désactivation des interfaces non-utilisées :
+//TODO
+
 Création d'un motd :
 En mode config
 ```
