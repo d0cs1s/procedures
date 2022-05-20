@@ -179,6 +179,35 @@ S1(config-if)#end
 
 
 ## Configuration d'un routeur
+### Configuration de base
+
+La procédure de configuration de base du routeur est la même que pour le switch.
+Attention : les interfaces ne sont pas activées par défaut sur le routeur. 
+
+Activer une interface :
+```
+conf t
+interface [interface]
+no shutdown
+```
+Configurer une adresse IP sur une interface :
+```
+ip address [IP] [subnet-mask]
+```
+
+### Routage statique
+
+Création de la route par défaut :
+```
+ip route 0.0.0.0 0.0.0.0 192.168.1.1
+```
+
+Création d'une route statique :
+```
+ip route [network] [mask] [ip_interface]
+```
+Pour atteindre le réseau [network] passer par [ip_interface]
+
 ### Routage Inter-VLAN (router on a sitck)
 
 Création de la sous-interface G0/0.10 et de la sous-interface G0/0.30
