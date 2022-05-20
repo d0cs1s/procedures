@@ -52,6 +52,18 @@ Désactivation de la commande de recherche DNS :
 ```
 no ip domain-lookup
 ```
+
+Création d'un motd :
+En mode config
+```
+banner motd "Le Message Of The Day : Authorized access only"
+```
+
+Enregistrement de la configuration :
+```
+copy running-config startup-config
+```
+
 #### Accès ssh
 
 Définition du domaine :
@@ -98,16 +110,6 @@ shutdown
 ```
 Désactive les interfaces fastethernet 0 et de 2 à 24 ainsi que l'interface G0/2.
 
-Création d'un motd :
-En mode config
-```
-banner motd "Le Message Of The Day : Authorized access only"
-```
-
-Enregistrement de la configuration :
-```
-copy running-config startup-config
-```
 
 ### Création des VLANs
 
