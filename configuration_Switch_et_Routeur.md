@@ -91,7 +91,12 @@ exec-timeout [minutes]
 ```
 
 Désactivation des interfaces non-utilisées :
-//TODO
+En mode config
+```
+interface range F0/2-24, G0/2
+shutdown
+```
+Désactive les interfaces fastethernet 0 et de 2 à 24 ainsi que l'interface G0/2.
 
 Création d'un motd :
 En mode config
