@@ -281,6 +281,7 @@ access-list 1 permit any
 access-list 1 remark Test de remarque juste pour voir
 exit
 ```
+La remarque est visible dans la running-config
 
 Vérification des ACL :
 ```
