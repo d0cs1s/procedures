@@ -225,7 +225,7 @@ network [réseau1]
 network [réseau2]
 ```
 
-Exemple dans le cas d'un routeur interconnecté aux réseaux 10.0.0.0/24 et 192.168.1.0/24 ::
+Exemple dans le cas d'un routeur interconnecté aux réseaux 10.0.0.0/24 et 192.168.1.0/24 :
 ```
 router rip
 version 2
