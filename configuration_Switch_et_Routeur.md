@@ -207,6 +207,8 @@ ip address [IP] [subnet-mask]
 Création de la route par défaut :
 ```
 ip route 0.0.0.0 0.0.0.0 192.168.1.1
+ou
+ip route 0.0.0.0 0.0.0.0 [interface]
 ```
 
 Création d'une route statique :
@@ -223,6 +225,8 @@ router rip
 version 2
 network [réseau1]
 network [réseau2]
+no auto-summary //pour désactiver le sommaire des routes
+passive-interface g0/0 //pour désactiver l'emission du rip sur une interface
 ```
 
 Exemple dans le cas d'un routeur interconnecté aux réseaux 10.0.0.0/24 et 192.168.1.0/24 :
