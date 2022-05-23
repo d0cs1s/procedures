@@ -272,6 +272,7 @@ R1(config-if)#no shutdown
 ```
 
 ### Gestion des ACL (Access Control List)
+#### ACL numérotée
 
 Création d'ACL pour interdire l'accès à un réseau depuis un autre réseau :
 ```
@@ -298,3 +299,16 @@ ip access-group 1 out
 Conseils de création d'une ACL : 
 > Utiliser un éditeur de texte et commenter les ACL / Copier-coller les commandes / Toujours tester soigneusement une liste ACL
 
+
+#### ACL nommée
+
+Il est aussi possible de créer une access-list nommée. Le système va gérer lui même la numérotation de l'ACL :
+```
+conf t
+ip access-list standard [NomACL]
+permit host [ip]
+deny any
+exit
+interface [nomInterface]
+ip access-group [NomACL] out
+```
