@@ -5,6 +5,7 @@
 ```
 id
 cat /etc/passwd
+```
 
 ## Services
 
@@ -13,11 +14,12 @@ Pour compter les services systemd en cours de fonctionnement
 pgrep -c 'd$'
 ```
 
-Pour connaître les services systemd activés en démarrage automatique :
+Pour connaÃ®tre les services systemd activÃ©s en dÃ©marrage automatique :
 ```
 systemctl list-unit-file |grep 'enabled'
+```
 
-## Informations configuration réseau
+## Informations configuration rÃ©seau
 
 ```
 hostname
@@ -43,7 +45,7 @@ Info sur les volumes logiques
 lvs
 ```
 
-Connaître l'espace disque restant
+ConnaÃ®tre l'espace disque restant
 ```
 df -h
 ```
