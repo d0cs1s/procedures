@@ -278,6 +278,7 @@ Création d'ACL pour interdire l'accès à un réseau depuis un autre réseau :
 conf t
 access-list 1 deny [RéseauAyantInterdictiondAccès] 0.0.0.255
 access-list 1 permit any
+access-list 1 remark Test de remarque juste pour voir
 exit
 ```
 
