@@ -273,18 +273,26 @@ R1(config-if)#no shutdown
 
 ### Gestion des ACL (Access Control List)
 
+Création d'ACL pour interdire l'accès à un réseau depuis un autre réseau :
+```
+conf t
+access-list 1 deny [RéseauAyantInterdictiondAccès] 0.0.0.255
+access-list 1 permit any
+exit
+```
+
 Vérification des ACL :
 ```
 show access-list
 ```
 
-Exemple d'une ACL nommée :
+Application de l'ACL sur une l'interface d'un routeur : 
 ```
-ip access-list extended FTP-FILTER
-permit tcp 192.168.10.0 0.0.0.255 any eq ftp
-permit tcp 192.168.10.0 0.0.0.255 any eq ftp-data
+conf t
+interface GigabitEthernet0/0
+ip access-group 1 out
 ```
-ici on autorise le trafic ftp pour tous les hôtes du réseau 192.168.10.0/24
 
 Conseils de création d'une ACL : 
 > Utiliser un éditeur de texte et commenter les ACL / Copier-coller les commandes / Toujours tester soigneusement une liste ACL
+
