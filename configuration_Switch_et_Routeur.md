@@ -270,3 +270,7 @@ Activer l'intergace G0/0 :
 R1(config)#interface G0/0
 R1(config-if)#no shutdown
 ```
+
+### Gestion des ACL (Access Control List)
+
+Les ACL sont composées d'ACE (Access Control Entry)
