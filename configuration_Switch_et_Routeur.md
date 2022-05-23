@@ -217,7 +217,21 @@ Pour atteindre le réseau [network] passer par [ip_interface]
 
 ### Routage avec le protocol RIP
 
-//TODO
+```
+conf t
+router rip
+version 2
+network [réseau1]
+network [réseau2]
+```
+
+Exemple dans le cas d'un routeur interconnecté aux réseaux 10.0.0.0/24 et 192.168.1.0/24 ::
+```
+router rip
+version 2
+network 10.0.0.0
+network 192.168.1.0
+```
 
 ### Routage Inter-VLAN (router on a sitck)
 
