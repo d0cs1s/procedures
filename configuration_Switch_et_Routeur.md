@@ -226,6 +226,7 @@ version 2
 network [réseau1]
 network [réseau2]
 no auto-summary //pour désactiver le sommaire des routes
+default-information originate //pour avertir les autres routeurs via RIP de la création d'une route par défaut
 passive-interface g0/0 //pour désactiver l'emission du rip sur une interface
 ```
 
