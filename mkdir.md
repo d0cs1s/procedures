@@ -1,7 +1,7 @@
 # mkdir
 
-## création de répertoire et sous-répertoire en 1 commande
+## crÃ©ation de rÃ©pertoire et sous-rÃ©pertoire en 1 commande
 
-bash```
-mkdir -p /{data/{public,suivi,secret,stagiaires/rtssr},etc/backup,var/archlogs,srv/{partage,privé}}
+```
+mkdir -p /{data/{public,suivi,secret,stagiaires/rtssr},etc/backup,var/archlogs,srv/{partage,privÃ©}}
 ```
