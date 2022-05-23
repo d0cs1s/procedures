@@ -273,4 +273,20 @@ R1(config-if)#no shutdown
 
 ### Gestion des ACL (Access Control List)
 
-Les ACL sont composées d'ACE (Access Control Entry)
+Vérification des ACL :
+```
+show access-list
+```
+
+Exemple d'une ACL nommée :
+```
+ip access-list extended FTP-FILTER
+permit tcp 192.168.10.0 0.0.0.255 any eq ftp
+permit tcp 192.168.10.0 0.0.0.255 any eq ftp-data
+```
+ici on autorise le trafic ftp pour tous les hôtes du réseau 192.168.10.0/24
+
+Conseils de création d'une ACL : 
+  --> Utiliser un éditeur de texte et commenter les ACL
+  -> Copier-coller les commandes
+  -> Toujours tester soigneusement une liste ACL
