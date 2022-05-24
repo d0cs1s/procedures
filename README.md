@@ -22,3 +22,11 @@ Contient :
 Contient :
   - Prise d'info sur le système, les disques
   - WIP
+
+
+## [Gestion des groupes et utilisateurs Debian](https://github.com/d0cs1s/procedures/blob/main/users_groups_debian.md)
+Contient :
+  - Création de groupes
+  - Création d'utilisateurs
+  - Gestion des mots de passe
+  - WIP
