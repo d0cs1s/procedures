@@ -264,7 +264,7 @@ GigabitEthernet0/1     unassigned      YES unset  administratively down down
 Vlan1                  unassigned      YES unset  administratively down down
 ```
 
-Activer l'intergace G0/0 :
+Activer l'interface G0/0 :
 
 ```
 R1(config)#interface G0/0
