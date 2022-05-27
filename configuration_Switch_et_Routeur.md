@@ -76,6 +76,11 @@ Génération des paires de clés RSA :
 crypto key generate RSA
 ```
 
+> Dans le cas ou on veut supprimer les clés RSA :
+```
+crypto key zeroize rsa
+```
+
 Création d'un utilisateur :
 ```
 username [utilisateur] secret [password]
