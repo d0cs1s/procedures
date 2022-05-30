@@ -43,7 +43,7 @@ PS C:\Users\Administrateur> Initialize-Disk -Number [NuméroDuDisque]
 S'il y a plusieurs disques à initialiser : 
 
 ```
-PS C:\Users\Administrateur> Get-Disk | Initialize-Disk -Passthru
+PS C:\Users\Administrateur> Get-Disk | Where-Object { $_.OperationalStatus -eq "offline"}  | Initialize-Disk -Passthru
 ```
 
 > Si un disque MBR est requis : utiliser l'option -PartitionStyle MBR
