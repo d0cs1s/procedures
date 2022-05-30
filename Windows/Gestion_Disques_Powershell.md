@@ -28,7 +28,7 @@ Pour la liste des volumes existants :
 PS C:\Users\Administrateur> Get-Volume
 ```
 
-[Config des volumes](## Gestion des volumes)
+([Config des volumes](https://github.com/d0cs1s/procedures/blob/main/Windows/Gestion_Disques_Powershell.md#gestion-des-volumes))
 
 ## Gestion des disques
 
