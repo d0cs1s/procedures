@@ -98,6 +98,7 @@ Pour la création des différents volumes, il va falloir connaître les différe
 
 ### Création d'un volume en miroir (RAID 1)
 
+//TODO : correction de la commande pour sélectionner correctement les disques
 ```
 PS C:\Users\Administrateur> New-Volume -DiskNumber [Disk1, Disk2] -FriendlyName [NomDuVolume] -Size [TailleEnKB/MB/GB/TB] -ResiliencySettingName "Mirror" -FileSystem NTFS -AccessPath "[CheminAccès]"
 ```
@@ -105,12 +106,14 @@ PS C:\Users\Administrateur> New-Volume -DiskNumber [Disk1, Disk2] -FriendlyName 
 
 ### Création d'un volume avec parité (RAID 5)
 
+//TODO : correction de la commande pour sélectionner correctement les disques
 ```
 PS C:\Users\Administrateur> New-Volume -DiskNumber [Disk1, Disk2, Disk3] -FriendlyName [NomDuVolume] -Size [TailleEnKB/MB/GB/TB] -ResiliencySettingName "Parity" -FileSystem NTFS -AccessPath "[CheminAccès]"
 ```
 
 ### Création d'un volume agrégé par bande (RAID 0)
 
+//TODO : correction de la commande pour sélectionner correctement les disques
 ```
 PS C:\Users\Administrateur> New-Volume -DiskNumber [Disk1, Disk2] -FriendlyName [NomDuVolume] -Size [TailleEnKB/MB/GB/TB] -ResiliencySettingName "Simple" -FileSystem NTFS -AccessPath "[CheminAccès]"
 ```
