@@ -18,7 +18,7 @@ Pour la liste des partitions déjà existantes :
 PS C:\Users\Administrateur> Get-Partition
 ```
 
-[Config des partitions](## Gestion des partitions)
+([Config des partitions](https://github.com/d0cs1s/procedures/blob/main/Windows/Gestion_Disques_Powershell.md#gestion-des-partitions))
 
 ### Les volumes
 
