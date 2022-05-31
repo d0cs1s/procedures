@@ -34,8 +34,8 @@ Install-ADDSForest `
 -CreateDnsDelegation:$false `
 -DatabasePath "C:\Windows\NTDS" `
 -DomainMode "WinThreshold" `
--DomainName "fabien.lcl" `
--DomainNetbiosName "FABIEN" `
+-DomainName "d0cs1s.lcl" `
+-DomainNetbiosName "d0cs1s" `
 -ForestMode "WinThreshold" `
 -InstallDns:$true `
 -LogPath "C:\Windows\NTDS" `
