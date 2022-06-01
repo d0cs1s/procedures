@@ -63,7 +63,7 @@ DISKPART> CONVERT DYNAMIC
 DISKPART> CREATE VOLUME MIRROR SIZE=4000 DISK=1,3
 
 DiskPart a correctement créé le volume.
-DISKPART> FORMAT FS=NTFS LABEL="[NomDuVolume]" QUICK COMPRESS
+DISKPART> FORMAT FS=NTFS LABEL="[NomDuVolume]" QUICK 
 
   100 pour cent effectués
 
@@ -77,7 +77,7 @@ DISKPART> ASSIGN [LETTER=D | MOUNT="C:\chemin"]
 DISKPART> CREATE VOLUME RAID SIZE=3000 DISK=1,2,3
 
 DiskPart a correctement créé le volume.
-DISKPART> FORMAT FS=NTFS LABEL="Données" quick compress
+DISKPART> FORMAT FS=NTFS LABEL="Données" quick 
 
   100 pour cent effectués
 
@@ -93,7 +93,7 @@ DISKPART> CREATE VOLUME STRIPE SIZE=3000 DISK=1,2,3
 
 DiskPart a correctement créé le volume.
 
-DISKPART> FORMAT FS=NTFS LABEL="Database" QUICK COMPRESS
+DISKPART> FORMAT FS=NTFS LABEL="Database" QUICK
 
   100 pour cent effectués
 
