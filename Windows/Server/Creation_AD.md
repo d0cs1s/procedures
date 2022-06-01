@@ -46,7 +46,7 @@ Install-ADDSForest `
 
 ## Ajouter une machine au domaine
 
-Remplacer le domaine WORKGROUP par votre domaine.
+Remplacer le domaine WORKGROUP par votre domaine et configurer le DNS préféré avec l'ip de l'AD
 
 Pour se connecter sur la nouvelle machine, choisir *autre utilisateur* et taper :
 
