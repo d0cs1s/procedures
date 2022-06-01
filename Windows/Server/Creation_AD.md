@@ -44,7 +44,7 @@ Install-ADDSForest `
 -Force:$true
 ```
 
-## Ajouter une machine au domaine
+### Ajouter une machine au domaine
 
 Remplacer le domaine WORKGROUP par votre domaine et configurer le DNS préféré avec l'ip de l'AD
 
@@ -54,3 +54,10 @@ login@mon.domaine
 
 Pour voir la liste des machines et utilisateurs de l'AD :
 - Outils --> Utilisateurs et ordinateurs de l'active directory
+
+## Ajout d'un contrôleur de domaine secondaire
+
+Reproduire la procédure d'installation d'un nouvel AD. La différence s'effectue au moment de la promotion du serveur en contrôleur de domaine.
+Lors de la configuration ajouter le contrôleur de domaine à un domaine existant.
+
+Si le contrôleur de domaine fait aussi office de serveur DNS, l'ajouter en tant que DNS secondaire dans tous les postes clients (ou via DHCP)
