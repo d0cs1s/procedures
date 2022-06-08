@@ -12,5 +12,5 @@ Installer pfsense sur la machine et configurer la langue
 
 ### pfsense en ligne de commande
 
-![Interface pfsense](./images/pfsense.jpg)
+![Interface pfsense](Others/images/pfsense.png)
 
