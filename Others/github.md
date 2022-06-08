@@ -33,7 +33,7 @@ git push
 
 
 ```shell
-git fetch origin/main
+git fetch
 ...
 git pull
 ```
