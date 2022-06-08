@@ -9,7 +9,7 @@ git clone {urlduRepo}
 
 ### Tracking des changements
 
-Après la création d'un nouveau fichier local :
+Après la modification d'un fichier local :
 
 ```shell
 git add {cheminDuFichierLocal}
