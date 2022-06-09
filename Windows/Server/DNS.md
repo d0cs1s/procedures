@@ -24,7 +24,7 @@ Serveur hébergeur : Fait autorité pour le(s) espace(s) de noms qu'il gère
 Adresse IP    Nom
 127.0.0.1	  localhost
 
-## Installation Serveur DNS Windows Server
+## Installation Serveur DNS Resolver Windows Server
 
 ### Mise en place serveur résolveur
 
@@ -42,3 +42,39 @@ Pour résoudre des noms de domaines privés, il faut configurer une redirection 
 Clic droit sur le serveur DNS -> Propriétés -> Onglet redirecteurs
 
 Entrer l'adresse IP du serveur DNS du domaine visé.
+
+## Installation Serveur DNS Hébergeur Windows Server
+
+### Mise en place du serveur Hébergeur
+
+On procède de la même manière que pour le DNS Resolveur. C'est la suite qui déterminera le fait que le serveur est hébergeur.
+
+### Création de la zone de recherche directe
+
+- Clic droit sur zone de recherche directe -> Nouvelle zone
+- Zone principale
+- Donner un nom à la zone (ex : infra.net)
+- Valider la création du nouveau fichier de configuration
+- Ne pas autoriser les mises à jour dynamiques
+- Valider les changements
+
+### Création de la zone de recherche inversée
+
+- Clic droit sur zone de recherche inversée -> Nouvelle zone
+- Zone principale
+- Zone de recherche inversée IPv4
+- entrer l'ID Network
+- Ne pas autoriser les mises à jour dynamiques
+- Valider les changements
+
+### Création d'un nouvel enregistrement
+
+Pour ajouter un nouvel hôte :
+
+- Clic droit sur la zone de recherche directe créée -> Nouvel hôte
+- Entrer le nom d'hôte et l'IP de l'hôte
+
+> Attention : Cocher "Créer un pointeur d'enregistrement PTR associé"
+> > Cela permet de créer la recherche inversée associée à cet hôte
+
+
