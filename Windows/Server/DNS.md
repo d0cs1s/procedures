@@ -77,4 +77,60 @@ Pour ajouter un nouvel hôte :
 > Attention : Cocher "Créer un pointeur d'enregistrement PTR associé"
 > > Cela permet de créer la recherche inversée associée à cet hôte
 
+Pour ajouter un nouvel alias (si plusieurs services sont hébergés sur la même machine) :
 
+- Clic droit sur la zone de recherche directe créée -> Nouvel Alias
+- Donner un nom à l'alias (ex : dns)
+- Entrer le FQDN pour l'hôte de destination -> Parcourir -> Choisir l'hôte sur lequel pointe l'alias
+
+## Vérification de la configuration
+
+### Vérifier l'enregistrement du serveur DNS maître
+
+```shell
+nslookup -q=soa infra.net
+Serveur :   server1.infra.net
+Address:  172.23.9.101
+
+infrafb.net
+        primary name server = server1
+        responsible mail addr = hostmaster
+        serial  = 9
+        refresh = 900 (15 mins)
+        retry   = 600 (10 mins)
+        expire  = 86400 (1 day)
+        default TTL = 3600 (1 hour)
+```
+
+### Vérifier l'ip du(des) serveur(s) faisant autorité pour la zone
+
+```shell
+nslookup -q=ns infra.net
+Serveur :   server1.infra.net
+Address:  172.23.9.101
+
+infrafb.net     nameserver = server1
+```
+
+### Vérifier les alias
+
+```shell
+nslookup dhcp.infra.net
+Serveur :   server1.infra.net
+Address:  172.23.9.101
+
+Nom :    server1.infra.net
+Address:  172.23.9.101
+Aliases:  dhcp.infra.net
+```
+
+### Vérifier la recherche inversée
+
+```shell
+nslookup 172.23.9.101
+Serveur :   server1.infra.net
+Address:  172.23.9.101
+
+Nom :    server1.infra.net
+Address:  172.23.9.101
+```
