@@ -173,3 +173,17 @@ Sinon en Powershell :
 ```shell
 PS C:\Windows\system32> Add-DnsServerForwarder -IPAddress "172.23.16.1"
 ```
+
+## Enregistrement dynamique
+
+Pour que les clients puissent s'enregistrer dynamiquement :
+
+- Clic-droit sur la zone de recherche directe concernée
+- Propriétés
+- Dans mise à jour dynamique changer l'option par "Non sécurisé et sécurisé"
+
+Il reste à modifier un réglage dans le DHCP :
+
+- Clic-droit sur l'étendu
+- Propriétés onglet DNS
+- Toujours mettre à jour dynamiquement les enregistrements DNS
