@@ -135,7 +135,11 @@ Nom :    server1.infra.net
 Address:  172.23.9.101
 ```
 
-## Ajouter un redirecteur conditionnel
+## Ajouter un redirecteur 
+
+### Redirecteur conditionnel
+
+Pour une requête DNS quand un certain suffixe est présent dans la requête
 
 Pour ajouter un redirecteur conditionnel via l'interface : 
 
@@ -152,4 +156,20 @@ PS C:\Windows\system32> Add-DnsServerConditionalForwarderZone -Name "infrajb.net
 ZoneName                            ZoneType        IsAutoCreated   IsDsIntegrated  IsReverseLookupZone  IsSigned
 --------                            --------        -------------   --------------  -------------------  --------
 infrajb.net                         Forwarder       False           False           False
+```
+
+### Redirecteur (général)
+
+Pour que toutes les requêtes soient envoyées vers un serveur dns en particulier : 
+
+- Clic droit sur le serveur DNS (dans l'interface de config)
+- Propriétés
+- Onglet Redirecteurs
+- Modifier
+- Ajouter l'ip du serveur DNS à atteindre
+
+Sinon en Powershell :
+
+```shell
+PS C:\Windows\system32> Add-DnsServerForwarder -IPAddress "172.23.16.1"
 ```
