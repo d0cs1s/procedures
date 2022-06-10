@@ -134,3 +134,22 @@ Address:  172.23.9.101
 Nom :    server1.infra.net
 Address:  172.23.9.101
 ```
+
+## Ajouter un redirecteur conditionnel
+
+Pour ajouter un redirecteur conditionnel via l'interface : 
+
+- Clic droit sur redirecteur conditionnel
+- Nouveau redirecteur conditionnel
+- Ecrire le suffixe dns et l'ip du serveur dns à joindre
+- Valider
+
+Sinon en Powershell :
+
+```shell
+PS C:\Windows\system32> Add-DnsServerConditionalForwarderZone -Name "infrajb.net" -MasterServers 172.23.15.2 -PassThru
+
+ZoneName                            ZoneType        IsAutoCreated   IsDsIntegrated  IsReverseLookupZone  IsSigned
+--------                            --------        -------------   --------------  -------------------  --------
+infrajb.net                         Forwarder       False           False           False
+```
