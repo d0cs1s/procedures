@@ -187,3 +187,20 @@ Il reste à modifier un réglage dans le DHCP :
 - Clic-droit sur l'étendu
 - Propriétés onglet DNS
 - Toujours mettre à jour dynamiquement les enregistrements DNS
+
+## Tolérance aux pannes
+
+Pour une tolérance au panne et une réplication des données sur le réseau, il faut configurer un transfert de zone.
+
+Sur le serveur maître : 
+
+- Clic-droit sur la zone de recherche directe gérée
+- Onglet transfert de zone : autoriser les transferts de zone
+- Entrer l'adresse IP du serveur esclave
+
+Sur le serveur esclaver :
+
+- Clic droit sur zone de recherche directe : nouvelle zone
+- Zone secondaire
+- Entrer le nom de la zone
+- Entrer l'ip du serveur maître
