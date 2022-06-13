@@ -21,6 +21,8 @@ Modification durable et immédiate de l'ip :
 nmcli connection modify Wired\ connection\ 1 ipv4.addresses 192.168.10.1/24 ipv4.method.manual
 ```
 
+> "Wired\ connection\ 1" s'autocomplète avec tab et se retrouve dans la prise d'info avec la commande nmcli
+
 Configuration de la passerelle par défaut :
 
 ```bash
