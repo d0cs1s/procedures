@@ -78,7 +78,11 @@ Si vous souhaitez ajouter le nouveau volume, dans un groupe déjà existant. Pr�
 
 ### Création d’un groupe de volumes (VG) 
 
-//TODO 
+Pour créer un nouveau groupe de volume :
+
+```bash
+vgcreate [nomDuGroupe] /dev/sdb1 /dev/sdb2
+```
 
 ### Création d’un volume logique (LV) 
 
@@ -138,7 +142,13 @@ The filesystem on /dev/debian-desktop-vg/home is now 9122816 (4k) blocks long.
 
 #### Diminuer une partition LVM 
 
-//TODO
+Pour réduire une partition LVM : 
+
+```bash
+lvreduce -L -1G /dev/mapper/vg-a-reduire
+```
+
+> Attention ! Faire une sauvegarde des données avant, cette opération peut mener à une perte de donnée
 
 ### Gestions du système de fichiers 
 
