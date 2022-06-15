@@ -19,7 +19,7 @@ Le fichier de configuration principal de bind9 se trouve à "/etc/bind/named.con
 Il faut définir une acl pour les différents réseaux des postes clients dans le fichier named.conf :
 
 ```bash 
-// lan_corp = réseaux des postes clients de l'entreprise
+// lan_corp = réseaux des postes clients
 acl lan_corp { 127.0.0.0/8; 192.168.10.0/24; 172.30.1.0/24; };
 ```
 
