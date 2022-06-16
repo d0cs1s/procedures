@@ -47,3 +47,15 @@ forwarder {
   10.168.0.3;
 };
 ```
+
+#### Ajout d'un redirecteur conditionnel
+
+Pour ajouter un redirecteur conditionnel, il faut ajouter une zone de type *forward* au fichier /etc/bind/named.conf.local :
+
+```bash
+zone lazonedacote.local {
+  type forward;
+  forward only;
+  forwarder { 10.20.0.53; };
+};
+```
