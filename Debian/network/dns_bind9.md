@@ -79,6 +79,33 @@ zone "masuperzone.local" {
   allow-transfer { ip.du.transfert.zone; };
 };
 ```
+Il faut maintenant créer le fichier de données dans /var/cache/bind/db.masuperzone.local :
+
+```bash
+; fichier de zone du domaine masuperzone.local
+; le point-virgule est un commentaire (ouioui)
+
+$ORIGIN masuperzone.local.
+$TTL 86400
+@ SOA DEB-S2.masuperzone.local. contact.masuperzone.local. (
+20220616 ; serial
+86400 ; refresh tous les jours
+7200 ; retry toutes les 2 heures
+3600000 ; expire
+3600 ) ; negative TTL
+;
+@ NS DEB-S2.masuperzone.local.
+
+DEB-S2  A       192.168.9.12
+DEB-S1  A       192.168.9.11
+RouTux  A       192.168.9.254
+RouTux  A       172.18.9.254
+pfSense A       172.30.9.1
+
+dns1    CNAME   DEB-S2.masuperzone.local.
+dhcp1   CNAME   DEB-S1.fmasuperzone.local.
+
+```
 
 #### Zone inverse
 
