@@ -103,4 +103,21 @@ OPTIONS=""
 ```
 > Redémarrer le service après configuration
 
+## Troubleshooting
+
+En cas d'incident, il est possible de lancer les services au 1er plan grâce au mode débug et ainsi voir ce qui ne va pas. 
+
+Pour lancer dhcp server en mode débug :
+
+```bash
+systemctl stop isc-dhcp-server
+dhcpd -d
+```
+
+Pour lancer le relay en mode débug :
+
+```bash
+dhcrelay -d -id <interfacedownstream> -iu <interfaceupstream> <serveurDHCPajoindre>
+```
+
 
