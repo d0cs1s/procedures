@@ -36,10 +36,6 @@ allow-recursion { lan_corp; };
 
 > On ne touchera pas au fichier named.conf.default-zones
 
-#### Configuration DNSSEC
-
-//TODO
-
 #### Ajout d'un redirecteur inconditionnel
 
 Dans le fichier named.conf.options modifier la ligne forwarders :
@@ -103,9 +99,25 @@ RouTux  A       172.18.9.254
 pfSense A       172.30.9.1
 
 dns1    CNAME   DEB-S2.masuperzone.local.
-dhcp1   CNAME   DEB-S1.fmasuperzone.local.
+dhcp1   CNAME   DEB-S1.masuperzone.local.
 
 ```
+
+Vérifier la configuration avec les commandes : 
+
+```bash
+named-checkconf
+named-checkzone masuperzone.local /var/cache/bind/db.masuperzone.local
+```
+> Si la commande *named-checkconf* ne retourne rien, tout semble en ordre
+> > La commande *named-checkzone* doit retournner le nom de la zone, son serial et "OK"
+
+Recharger la configuration avec la commande :
+
+```bash
+rndc reload
+```
+> Attention : Si la commande retourne "rndc: connect failed: 127.0.0.1#953: connection refused" --> cf. Configuration RNDC
 
 #### Zone inverse
 
@@ -130,3 +142,14 @@ zone "10.168.192.in-addr.arpa" {
   allow-query { lan_corp; }; 
 };
 ```
+
+## Sécurité
+
+### Configuration DNSSEC
+
+//TODO
+
+
+### Configuration RNDC
+
+//TODO
