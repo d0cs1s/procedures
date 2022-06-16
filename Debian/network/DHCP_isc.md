@@ -120,4 +120,4 @@ Pour lancer le relay en mode débug :
 dhcrelay -d -id <interfacedownstream> -iu <interfaceupstream> <serveurDHCPajoindre>
 ```
 
-
+> Il faut reboot la machine après un lancement en mode debug ou rm /var/run/dhcpd.pid
