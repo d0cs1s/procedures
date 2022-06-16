@@ -118,6 +118,7 @@ Recharger la configuration avec la commande :
 rndc reload
 ```
 > Attention : Si la commande retourne "rndc: connect failed: 127.0.0.1#953: connection refused" --> cf. Configuration RNDC
+> > Il est aussi possible de relancer le service mais avec perte des statistiques
 
 #### Zone inverse
 
