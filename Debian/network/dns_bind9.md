@@ -61,3 +61,45 @@ zone lazonedacote.local {
   forwarder { 10.20.0.53; };
 };
 ```
+
+## Configuration service DNS faisant autorité
+
+Un serveur bind9 faisant autorité doit avoir une configuration (/etc/bind/named.conf.local) et des données (/var/cache/bind/db.masuperzone.local)
+
+### Configuration d'un serveur primaire
+
+#### Zone directe 
+
+Dans le fichier /etc/bind/named.conf.local : 
+
+```bash
+zone "masuperzone.local" {
+  type master;
+  file "db.masuperzone.local";
+  allow-transfer { ip.du.transfert.zone; };
+};
+```
+
+#### Zone inverse
+
+La zone inverse de déclare dans le même fichier (named.conf.local) :
+
+```bash
+zone "10.168.192.in-addr.arpa" {
+  type master;
+  file "db.192.168.10.inv";
+};
+```
+> Il faut bien entendu créer le fichier /var/cache/bind/db.192.168.10.inv
+
+### Configuration d'un serveur secondaire
+
+```bash
+zone "10.168.192.in-addr.arpa" {
+  type slave;
+  masters { ip.du.dns.master; };
+  file "db.masuperzone.local";
+  # on remet ici l'acl déclarée dans le named.conf
+  allow-query { lan_corp; }; 
+};
+```
