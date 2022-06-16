@@ -57,3 +57,11 @@ Savoir où est installé un programme :
 ```bash
 dpkg -L <programmerecherché>
 ```
+
+Il est aussi possible d'installer le paquet *locate* : 
+
+```bash
+updatedb
+locate <objetrecherché>
+```
+
