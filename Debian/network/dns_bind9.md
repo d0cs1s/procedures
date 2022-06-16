@@ -5,6 +5,8 @@
 apt install bind9
 ```
 
+> Note : Les commentaires dans les fichiers de conf de bind9 sont //
+
 ## Configuration de bind9
 
 ### DNS Résolveur
