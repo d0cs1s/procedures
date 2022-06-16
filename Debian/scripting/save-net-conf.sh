@@ -3,6 +3,11 @@
 if [ $# = 0 ];
 then
 	echo "Usage: ./save-net-conf.sh <compte> <ip> Il faut avoir créer des clés pour ssh au préalable"
+# //TODO partie non intéractive. Lire un fichier avec boucle do et more. Cut -d --> -f1 1er champ -f2 2è champ à mettre en variable compte et IP_server
+elif [ $1 = "-d" ];
+then
+        more
+
 else
 	echo "Connexion à $2 avec le compte $1"
 	mkdir backup-net-$2
@@ -13,4 +18,4 @@ else
 fi
 
 
-//TODO partie non intéractive. Lire un fichier avec boucle do et more. Cut -d --> -f1 1er champ -f2 2è champ à mettre en variable compte et IP_server
+
