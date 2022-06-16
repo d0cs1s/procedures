@@ -11,3 +11,6 @@ else
 	scp $1@$2:/etc/apt/sources.list ./backup-net-$2/sources.list
 	echo "Sauvegarde de la configuration de $2"
 fi
+
+
+//TODO partie non intéractive. Lire un fichier avec boucle do et more. Cut -d --> -f1 1er champ -f2 2è champ à mettre en variable compte et IP_server
