@@ -49,3 +49,11 @@ Connaître l'espace disque restant
 ```
 df -h
 ```
+
+## Informations sur les programmes
+
+Savoir où est installé un programme :
+
+```bash
+dpkg -L <programmerecherché>
+```
