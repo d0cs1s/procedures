@@ -127,15 +127,36 @@ La zone inverse de déclare dans le même fichier (named.conf.local) :
 ```bash
 zone "10.168.192.in-addr.arpa" {
   type master;
-  file "db.192.168.10.inv";
+  file "db.192.168.9.inv";
 };
 ```
-> Il faut bien entendu créer le fichier /var/cache/bind/db.192.168.10.inv
+> Il faut bien entendu créer le fichier /var/cache/bind/db.192.168.9.inv
+
+Exemple de fichier de zone inverse :
+
+```bash
+; zone inverse pour 192.168.9.0/24
+
+$TTL 86400
+@ SOA DEB-S2.masuperzone.local. contact.masuperzone.local. (
+20220617 ; serial
+86400    ; refresh
+7200     ; retry 2h
+3600000  ; expire
+3600     ; negative TTL
+)
+;
+
+@ NS DEB-S2.fabien-9.eni.
+11      PTR     DEB-S1.masuperzone.local.
+12      PTR     DEB-S2.masuperzone.local.
+
+```
 
 ### Configuration d'un serveur secondaire
 
 ```bash
-zone "10.168.192.in-addr.arpa" {
+zone "9.168.192.in-addr.arpa" {
   type slave;
   masters { ip.du.dns.master; };
   file "db.masuperzone.local";
