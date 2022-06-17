@@ -154,6 +154,7 @@ $TTL 86400
 ```
 
 ### Configuration d'un serveur secondaire
+//TODO zone de recherche directe et indirectes slave
 
 ```bash
 zone "9.168.192.in-addr.arpa" {
