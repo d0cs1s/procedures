@@ -117,7 +117,7 @@ Recharger la configuration avec la commande :
 ```bash
 rndc reload
 ```
-> Attention : Si la commande retourne "rndc: connect failed: 127.0.0.1#953: connection refused" --> cf. Configuration RNDC
+> Attention : Si la commande retourne "rndc: connect failed: 127.0.0.1#953: connection refused" --> Il faut autoriser 127.0.0.1/8 dans named.conf (acl)
 > > Il est aussi possible de relancer le service mais avec perte des statistiques
 
 #### Zone inverse
