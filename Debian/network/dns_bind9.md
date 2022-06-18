@@ -171,8 +171,3 @@ zone "9.168.192.in-addr.arpa" {
 ### Configuration DNSSEC
 
 //TODO
-
-
-### Configuration RNDC
-
-//TODO
