@@ -47,7 +47,7 @@ Elles s'appliquent ensuite sur les utilisateurs et les ordinateurs liés aux obj
 	- De sécurité --> Restreint la lecture et l'application de GPO
 	- WMI --> Limiter l'application grâce aux requêtes WMI (permet de faire des GPO en fonction des caractéristiques d'une machine : RAM / CPU / Usage / etc)
 
-## Configuration
+## Exemples de GPO
 
 ### Proxy
 
@@ -62,12 +62,47 @@ Entrer les informations du proxy.
 
 ### Fond d'écran
 
-Déposer le fond d'écran prévu dans un partage qui autorise les ordinateurs du domaine en lecture.
+Déposer le fond d'écran prévu dans un partage qui autorise les ordinateurs du domaine en lecture. ( Ordinateurs du domaine en ACL sur le partage public )
 
 Créer une GPO ordinateur --> paramètres windows --> Fichier
 
-Mettre en source l'adresse réseau, et en destination l'adresse locale (l'endroit où doit se mettre le fond d'écran sur les machines clientes.
+- Mode "créer"
+- Mettre en source l'adresse réseau, et en destination l'adresse locale (l'endroit où doit se mettre le fond d'écran sur les machines clientes.
+- Décocher archiver.
+- Onglet "commun" --> Appliquer une fois et ne pas réappliquer.
 
 Dans cette GPO, ajouter une règle Utilisateur --> Modèle d'admin --> Bureau --> Changer le papier peint.
 
+
+### Accès Panneau de configuration et outil paramètres
+
+//TODO
+
+### Accès Installation de pilotes et MAJ
+
+//TODO
+
+### Empêcher redémarrage automatique
+
+//TODO
+
+### Empêcher envoi de télémétrie
+
+//TODO
+
+### Désactiver Cortana
+
+//TODO
+
+### Bloquer MAJ Windows p2p
+
+//TODO
+
+### Bloquer remontée d'erreurs
+
+//TODO
+
+### Restriction sur média amovibles
+
+//TODO
 
