@@ -76,33 +76,57 @@ Dans cette GPO, ajouter une règle Utilisateur --> Modèle d'admin --> Bureau --
 
 ### Accès Panneau de configuration et outil paramètres
 
-//TODO
+Configuration Utilisateur --> Stratégies --> Modèles d'admin --> Composants Windows --> Panneau de configuration
+
+Activer la GPO "Interdire l'accès au Panneau de configuration et à l'application Paramètres du PC".
+
+L'appliquer sur les OU concernées.
 
 ### Accès Installation de pilotes et MAJ
 
-//TODO
+Par défaut, seuls les membres du groupe Administrateurs sont autorisés à installer de nouveaux pilotes de périphériques sur le système.
+Cependant, pour forcer la chose il est possible de désactiver le paramètre suivant :
+
+Configuration ordinateur --> Modèle d'admin --> Système --> Installation de pilotes --> Désactiver "Autoriser les non-admins à installer des pilotes pour ces classes de périphériques
 
 ### Empêcher redémarrage automatique
 
-//TODO
+Pour empêcher le redémarrage automatique (Windows Update) alors qu'un utilisateur est connecté : 
+
+Config ordinateur --> Modèles d'admin --> Composants Windows --> Windows Update --> Activer " Pas de redémarrage automatique avec des utilisateurs connectés pour les installations planifiées \[...]"
 
 ### Empêcher envoi de télémétrie
 
-//TODO
+Config ordinateur --> Stratégies --> Modèmes admins --> Composants Windows --> Collecte des données --> Désactiver "Autoriser la télémétrie"
+
+Il est aussi possible de bloquer le programme d'amélioration de l'expérience utilisateur Windows (dans paramètres de la communication internet : cf rapport d'erreurs).
 
 ### Désactiver Cortana
 
-//TODO
+Config ordinateur --> Stratégies --> Modèmes admins --> Composants Windows --> Rechercher --> Désactiver "Autoriser Cortana"
+
+### Désactiver recherche sur le web
+
+Lors de recherches Windwows, pour ne pas rechercher sur internet : $
+
+Config ordinateur --> Stratégies --> Modèmes admins --> Composants Windows --> Rechercher --> Activer "Ne pas autoriser la recherche Web"
 
 ### Bloquer MAJ Windows p2p
 
 //TODO
 
-### Bloquer remontée d'erreurs
+### Désactiver rapport d'erreurs
 
-//TODO
+Config ordinateur --> Stratégies --> Modèmes admins --> Système --> Gestion de la communication internet --> Paramètres de la communication internet
+
+Désactiver "Rapport d'erreurs Windows"
 
 ### Restriction sur média amovibles
 
-//TODO
+Toutes les restrictions d'accès au stockage amovible se trouvent dans les paramètres suivants : 
 
+Config ordinateur --> Stratégies --> Modèmes admins --> Système --> Accès au stockage amovible
+
+Pour désactiver l'ensemble des classes de stockage amovible, activer le paramètre : "Toutes les classes de stockage amovible : refuser tous les accès".
+
+Ce paramètre ayant priorité sur les autres, pour gérer de la lecture seule etc, ne pas utiliser ce paramètre.
