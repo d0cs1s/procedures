@@ -107,13 +107,17 @@ Config ordinateur --> Stratégies --> Modèmes admins --> Composants Windows -->
 
 ### Désactiver recherche sur le web
 
-Lors de recherches Windwows, pour ne pas rechercher sur internet : $
+Lors de recherches Windwows, pour ne pas rechercher sur internet :
 
 Config ordinateur --> Stratégies --> Modèmes admins --> Composants Windows --> Rechercher --> Activer "Ne pas autoriser la recherche Web"
 
 ### Bloquer MAJ Windows p2p
 
-//TODO
+Pour désactiver l'optimisation de la distribution : 
+
+Config ordinateur --> Stratégies --> Modèles d’administration --> Composants Windows --> Optimisation de la distribution
+
+Modifier le paramètre "Mode de téléchargement : HTTP uniquement"
 
 ### Désactiver rapport d'erreurs
 
