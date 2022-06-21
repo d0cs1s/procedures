@@ -8,10 +8,7 @@ Installer les pilotes
 Installer un port. Pour installer un port rapidement et éviter le check de Windows, on peut le faire en PowerShell
 
 ```shell
-Add-PrinterPort
--ComputerName "NomDeLaMachine" //specifier nom de la machine
--Name "NomDuPort" //nom du port
--PrinterHostAddress "192.168.1.48" //adresse ip (pour un port tcp/ip)
+Add-PrinterPort -ComputerName "NomDeLaMachine" -Name "NomDuPort" -PrinterHostAddress "192.168.1.48"
 ```
 
 Installer une imprimante avec un 1er réglage sur le port créé
