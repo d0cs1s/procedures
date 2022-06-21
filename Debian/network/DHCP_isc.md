@@ -85,7 +85,7 @@ Répondre aux questions de l'assistant.
 ```bash
 nano /etc/default/isc-dhcp-relay
 
- Defaults for isc-dhcp-relay initscript
+# Defaults for isc-dhcp-relay initscript
 # sourced by /etc/init.d/isc-dhcp-relay
 # installed at /etc/default/isc-dhcp-relay by the maintainer scripts
 
