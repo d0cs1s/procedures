@@ -134,3 +134,10 @@ Config ordinateur --> Stratégies --> Modèmes admins --> Système --> Accès au
 Pour désactiver l'ensemble des classes de stockage amovible, activer le paramètre : "Toutes les classes de stockage amovible : refuser tous les accès".
 
 Ce paramètre ayant priorité sur les autres, pour gérer de la lecture seule etc, ne pas utiliser ce paramètre.
+
+### Pousser une imprimante par GPO
+
+Pour pousser une imprimante réseau sur les postes clients :
+
+- Sur le serveur d'impression, répertorier les imprimantes dans l'annuaire
+- Après ajout dans l'annuaire, cliquer sur déployer par gpo
