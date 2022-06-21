@@ -69,6 +69,16 @@ host hote-fixe {
 }
 ```
 
+## Tolérance de panne
+
+Installation d'un serveur dhcp classique sur une autre machine. La différence va venir de la configuration : 
+
+- Mettre une durée de baux plus courte
+- le serveur est "not authoritative"
+- ajouter une temporisation "min-secs 5"
+- Créer une nouvelle étendue délivrant des adresses dans une plage différente du premier serveur
+- Réserver 20 % d'hôtes sur le serveur principal pour le serveur secondaire
+
 ## Configuration serveur DHCP Relay
 
 Déterminer les interfaces sur lesquelles doit écouter le server DHCP Relay
