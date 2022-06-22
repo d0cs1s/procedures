@@ -73,6 +73,7 @@ zone "masuperzone.local" {
   type master;
   file "db.masuperzone.local";
   allow-transfer { ip.du.transfert.zone; };
+  allow-query { lan_corp; };
 };
 ```
 Il faut maintenant créer le fichier de données dans /var/cache/bind/db.masuperzone.local :
