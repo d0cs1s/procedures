@@ -64,7 +64,7 @@ Entrer les informations du proxy.
 
 Déposer le fond d'écran prévu dans un partage qui autorise les ordinateurs du domaine en lecture. ( Ordinateurs du domaine en ACL sur le partage public )
 
-Créer une GPO ordinateur --> paramètres windows --> Fichier
+Créer une GPO ordinateur --> préférences --> paramètres windows --> Fichier
 
 - Mode "créer"
 - Mettre en source l'adresse réseau, et en destination l'adresse locale (l'endroit où doit se mettre le fond d'écran sur les machines clientes.
