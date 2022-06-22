@@ -71,7 +71,7 @@ Dans le fichier /etc/bind/named.conf.local :
 ```bash
 zone "masuperzone.local" {
   type master;
-  file "db.masuperzone.local";
+  file "/var/cache/bind/db.masuperzone.local";
   allow-transfer { ip.du.transfert.zone; };
   allow-query { lan_corp; };
 };
@@ -161,7 +161,7 @@ $TTL 86400
 zone "masuperzone.local" {
   type slave;
   masters { ip.du.dns.master; };
-  file "db.masuperzone.local";
+  file "/var/cache/bind/db.masuperzone.local";
   # on remet ici l'acl déclarée dans le named.conf
   allow-query { lan_corp; }; 
 };
