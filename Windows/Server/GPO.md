@@ -76,7 +76,7 @@ Dans cette GPO, ajouter une règle Utilisateur --> Modèle d'admin --> Bureau --
 
 ### Accès Panneau de configuration et outil paramètres
 
-Configuration Utilisateur --> Stratégies --> Modèles d'admin --> Composants Windows --> Panneau de configuration
+Configuration Utilisateur --> Stratégies --> Modèles d'admin --> Panneau de configuration
 
 Activer la GPO "Interdire l'accès au Panneau de configuration et à l'application Paramètres du PC".
 
