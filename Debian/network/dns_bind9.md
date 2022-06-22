@@ -158,7 +158,7 @@ $TTL 86400
 //TODO zone de recherche directe et indirectes slave
 
 ```bash
-zone "9.168.192.in-addr.arpa" {
+zone "masuperzone.local" {
   type slave;
   masters { ip.du.dns.master; };
   file "db.masuperzone.local";
