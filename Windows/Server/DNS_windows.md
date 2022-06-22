@@ -198,7 +198,7 @@ Sur le serveur maître :
 - Onglet transfert de zone : autoriser les transferts de zone
 - Entrer l'adresse IP du serveur esclave
 
-Sur le serveur esclaver :
+Sur le serveur esclave :
 
 - Clic droit sur zone de recherche directe : nouvelle zone
 - Zone secondaire
