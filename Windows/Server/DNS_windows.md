@@ -204,3 +204,20 @@ Sur le serveur esclave :
 - Zone secondaire
 - Entrer le nom de la zone
 - Entrer l'ip du serveur maître
+
+### Cas d'un serveur secondaire BIND
+
+Dans le cas d'un transfert de zone vers un serveur BIND, il y a quelques manipulations à réaliser : 
+
+Sur Windows :
+- Clic-droit sur le serveur DNS --> Propriétés --> Onglet avancé --> Cocher "Activer les zones secondaires BIND"
+- Le reste de la procédure est similaire au point précédent (config de la zone de recherche)
+- Ne pas oublier d'activer les notifications
+
+Configuration de BIND : 
+
+Pour l'installation se référer à la procédure Debian/network/dns_bind. Quelques changements à apporter :
+
+- Ajouter la ligne "masterfile-format text;" dans le fichier named.conf.options
+- Créer un fichier de db vide pour chaque zone et changer leurs droits : chmod 770 et chown :bind
+- Recharger la configuration
