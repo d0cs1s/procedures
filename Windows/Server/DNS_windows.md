@@ -219,5 +219,6 @@ Configuration de BIND :
 Pour l'installation se référer à la procédure Debian/network/dns_bind. Quelques changements à apporter :
 
 - Ajouter la ligne "masterfile-format text;" dans le fichier named.conf.options
+- Créer les zones dans named.conf.local
 - Créer un fichier de db vide pour chaque zone et changer leurs droits : chmod 770 et chown :bind
 - Recharger la configuration
