@@ -6,7 +6,7 @@
 ### Les disques
 
 Pour obtenir la liste des disques sous forme de liste : 
-```
+```powershell
 PS C:\Users\Administrateur> Get-Disk | Format-List
 ```
 
@@ -14,7 +14,7 @@ PS C:\Users\Administrateur> Get-Disk | Format-List
 
 Pour la liste des partitions déjà existantes : 
 
-```
+```powershell
 PS C:\Users\Administrateur> Get-Partition
 ```
 
@@ -24,7 +24,7 @@ PS C:\Users\Administrateur> Get-Partition
 
 Pour la liste des volumes existants :
 
-```
+```powershell
 PS C:\Users\Administrateur> Get-Volume
 ```
 
@@ -36,13 +36,13 @@ PS C:\Users\Administrateur> Get-Volume
 
 Après l'ajout d'un nouveau disque dur, il faut l'initialiser : 
 
-```
+```powershell
 PS C:\Users\Administrateur> Initialize-Disk -Number [NuméroDuDisque]
 ```
 
 S'il y a plusieurs disques à initialiser : 
 
-```
+```powershell
 PS C:\Users\Administrateur> Get-Disk | Where-Object { $_.OperationalStatus -eq "offline"}  | Initialize-Disk -Passthru
 ```
 
@@ -51,7 +51,7 @@ PS C:\Users\Administrateur> Get-Disk | Where-Object { $_.OperationalStatus -eq "
 ### Convertion de la table de partition
 
 Si besoin de passer d'une partition MBR à GPT :
-```
+```powershell
 PS C:\Users\Administrateur> Set-Disk -Number [NuméroDuDisque] -PartitionStyle GPT
 ```
 
@@ -61,7 +61,7 @@ PS C:\Users\Administrateur> Set-Disk -Number [NuméroDuDisque] -PartitionStyle G
 
 ### Création d'une partition
 
-```
+```powershell
 PS C:\Users\Administrateur> New-Partition -DiskNumber [NuméroDuDisque] -Size [ValeurEnKB/MB/GB/TB]
 ```
 
@@ -81,7 +81,7 @@ PS C:\Users\Administrateur> New-Partition -DiskNumber [NuméroDuDisque] -Size [V
 
 Pour supprimer une partition : 
 
-```
+```powershell
 PS C:\Users\Administrateur> Remove-Partition -DiskNumber [NuméroDuDisque] -PartitionNumber [NuméroDeLaPartition]
 ```
 
@@ -99,7 +99,7 @@ Pour la création des différents volumes, il va falloir connaître les différe
 ### Création d'un volume en miroir (RAID 1)
 
 //TODO : correction de la commande pour sélectionner correctement les disques
-```
+```powershell
 PS C:\Users\Administrateur> New-Volume -DiskNumber [Disk1, Disk2] -FriendlyName [NomDuVolume] -Size [TailleEnKB/MB/GB/TB] -ResiliencySettingName "Mirror" -FileSystem NTFS -AccessPath "[CheminAccès]"
 ```
 
@@ -107,13 +107,13 @@ PS C:\Users\Administrateur> New-Volume -DiskNumber [Disk1, Disk2] -FriendlyName 
 ### Création d'un volume avec parité (RAID 5)
 
 //TODO : correction de la commande pour sélectionner correctement les disques
-```
+```powershell
 PS C:\Users\Administrateur> New-Volume -DiskNumber [Disk1, Disk2, Disk3] -FriendlyName [NomDuVolume] -Size [TailleEnKB/MB/GB/TB] -ResiliencySettingName "Parity" -FileSystem NTFS -AccessPath "[CheminAccès]"
 ```
 
 ### Création d'un volume agrégé par bande (RAID 0)
 
 //TODO : correction de la commande pour sélectionner correctement les disques
-```
+```powershell
 PS C:\Users\Administrateur> New-Volume -DiskNumber [Disk1, Disk2] -FriendlyName [NomDuVolume] -Size [TailleEnKB/MB/GB/TB] -ResiliencySettingName "Simple" -FileSystem NTFS -AccessPath "[CheminAccès]"
 ```
