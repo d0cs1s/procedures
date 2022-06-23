@@ -61,3 +61,9 @@ Reproduire la procédure d'installation d'un nouvel AD. La différence s'effectu
 Lors de la configuration ajouter le contrôleur de domaine à un domaine existant.
 
 Si le contrôleur de domaine fait aussi office de serveur DNS, l'ajouter en tant que DNS secondaire dans tous les postes clients (ou via DHCP)
+
+### Tests
+
+- Vérifier la réplication du second contrôleur vers le premier lors de la création d'un nouvel objet
+- Vérifier les enregistrements DNS liés aux services de domaine générés pour le second contrôleur
+- Tester la connection d'un client après un arrêt successif du 1er puis du 2nd contrôleur
