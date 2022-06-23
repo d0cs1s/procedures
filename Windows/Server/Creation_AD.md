@@ -67,3 +67,18 @@ Si le contrôleur de domaine fait aussi office de serveur DNS, l'ajouter en tant
 - Vérifier la réplication du second contrôleur vers le premier lors de la création d'un nouvel objet
 - Vérifier les enregistrements DNS liés aux services de domaine générés pour le second contrôleur
 - Tester la connection d'un client après un arrêt successif du 1er puis du 2nd contrôleur
+
+## Création de l'arborescence et permissions
+
+Commencer par créer les OU (Organisational Unit). Ce sont des dossiers qui contiendront les différents objets de l'AD.
+
+Créer ensuite, les groupes, les utilisateurs, les partages, les ACL et DL etc, en respectant les recommandations Microsoft (AGDLP) :
+
+```mermaid
+graph LR
+A[Comptes] ----> B[Groupes généraux]
+B --> C[Groupe de domaine local]
+D[permissions] --> C
+```
+
+
