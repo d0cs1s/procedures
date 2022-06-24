@@ -81,4 +81,18 @@ B --> C[Groupe de domaine local]
 D[permissions] --> C
 ```
 
+Exemple de création d'une arborescence :
 
+```mermaid
+graph LR
+A[Support-Terre] --> B[computers]
+A --> C[groupes]
+C ---> GG
+C ---> DL
+A -----> D[Services]
+D ---> direction
+D ---> comptabilite
+D---> secretariat
+D ---> production
+D ---> support_info
+```
