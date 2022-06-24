@@ -23,7 +23,7 @@ La configuration se fait dans les fichiers :
 Pour voir le fichier débarassé de tous les commentaires et avec les numéros de ligne :
 
 ```shell
- grep -vEn “^#|^$” /etc/squid/squid.conf
+ grep -vn “#|$” /etc/squid/squid.conf
  ```
 
 Bonne pratique : avant modification des fichiers de configuration par défaut, en faire un backup.
