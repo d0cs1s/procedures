@@ -32,7 +32,7 @@ Eclaircir le fichier par défaut afin de travailler dessus :
 
 ```bash
 cd /etc/squid/ && cp squid.conf squid.conf.backup
-grep -vE “^#|^$” /etc/squid/squid.conf.backup > squid.conf
+grep -v “#|$” /etc/squid/squid.conf.backup > squid.conf
 ```
 
 ### Modification du port par défaut
