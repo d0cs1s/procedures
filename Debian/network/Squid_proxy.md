@@ -45,3 +45,20 @@ grep -vE “^#|^$” /etc/squid/squid.conf.backup > squid.conf
 Par défaut, Debian n'autorise que la connexion localhost. Il faut donc modifier le fichier /etc/squid/conf.d/debian.conf :
 
 - Décommenter la ligne "http_access allow localnet"
+
+### Déclaration d'un serveur proxy parent
+
+- Créer une acl pour les clients
+- La mention cache_peer permet de définir un serveur proxy parent
+
+
+```bash
+acl clients src 192.168.32.0/24 192.168.33.0/24
+[...]
+http_access allow clients
+http_access deny all
+[...]
+cache_peer proxy2.d0cs1s.infra.tld parent 8080 0 proxy-only no-query
+[...]
+never_direct allow all
+```
