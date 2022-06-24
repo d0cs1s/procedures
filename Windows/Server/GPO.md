@@ -49,6 +49,8 @@ Elles s'appliquent ensuite sur les utilisateurs et les ordinateurs liés aux obj
 
 ## Exemples de GPO
 
+Pour trouver des gpo rapidement il existe le site [gpsearch](https://gpsearch.azurewebsites.net/)
+
 ### Proxy
 
 Configuration utilisateur --> Préférences --> Paramètres du Panneau de configuration
