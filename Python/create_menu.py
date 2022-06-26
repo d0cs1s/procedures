@@ -14,26 +14,27 @@ def print_menu():
 
         
 def option1():
-     print('Selection \'Option 1\'')
+     print('Sélection \'Option 1\'')
 
         
 def option2():
-     print('Selection \'Option 2\'')
+     print('Sélection \'Option 2\'')
 
         
 def option3():
-     print('Selection \'Option 3\'')
+     print('Sélection \'Option 3\'')
 
         
 if __name__=='__main__':
     while(True):
         print_menu()
         option = ''
+        
         try:
             option = int(input('Entrez votre choix: '))
         except:
             print('Entrez un nombre ...')
-        #Check what choice was entered and act accordingly
+            
         if option == 1:
            option1()
         elif option == 2:
