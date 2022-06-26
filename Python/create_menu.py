@@ -7,19 +7,24 @@ menu_options = {
     4: 'Exit',
 }
 
+
 def print_menu():
     for key in menu_options.keys():
         print (key, '--', menu_options[key] )
 
+        
 def option1():
      print('Selection \'Option 1\'')
 
+        
 def option2():
      print('Selection \'Option 2\'')
 
+        
 def option3():
      print('Selection \'Option 3\'')
 
+        
 if __name__=='__main__':
     while(True):
         print_menu()
