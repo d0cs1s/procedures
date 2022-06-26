@@ -1,4 +1,18 @@
 # Utilisation de Github
+## Configuration de Git
+
+### Config username
+
+```bash
+git config --global user.name "username"
+```
+
+### Config email
+
+```bash
+git config --global user.email username@email.com
+```
+
 ## Clone d'un répertoire Github
 
 ```shell
