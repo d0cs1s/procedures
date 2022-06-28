@@ -10,6 +10,12 @@ Ce dossier contient les procédures que j'ai rédigées au cours de ma formation
 
 - Prise d'information
 - Utilisateurs et groupes
+- Gestion des disques
+- Configuration dns (BIND9)
+- Configuration DHCP (isc)
+- SSH
+- Proxy Squid
+- Apache2
 
 ## Windows
 
@@ -17,8 +23,18 @@ Ce dossier contient les procédures que j'ai rédigées au cours de ma formation
 - Active Directory
 - GPO
 - Serveur d'impression
+- DNS
+- DHCP
+- RSAT
 
 ## Others
 
 - Serveur http simple et rapide
 - Utilisation de Docker
+- pfsense
+- Utilisation de GitHub
+
+## Python
+
+- Création de menu
+- Testing sur l'API Philips Hue
