@@ -317,3 +317,8 @@ exit
 interface [nomInterface]
 ip access-group [NomACL] out
 ```
+
+
+---
+
+Sur les switchs reliés à des disques iSCSI, il est recommandé de régler le MTU sur 9000
