@@ -9,7 +9,8 @@ menu()
 	echo "C - Créer le compte utilisateur"
 	echo "M - Modifier le mot de passe de l'utlisateur"
 	echo "S - Supprime le compte utilisateur"
-	echo -e "V - Vérifie si le compte utilisateur existe\n"
+	echo "V - Vérifie si le compte utilisateur existe"
+	echo -e "U - Changer d'utilisateur\n"
 	echo "Q - Quitter"
 }
 
@@ -19,7 +20,10 @@ while true ; do
 	case $choice in
 		C|c)
 			echo "Créer le compte"
-			useradd -m -s /bin/bash $user
+			useradd -m -s /bin/bash $user 2>/dev/null
+			if [[ $? -eq 9 ]] ; then
+				echo "le compte existe déjà"
+			fi
 			;;
 		M|m)
 			echo "Modifier le mot de passe"
@@ -27,17 +31,23 @@ while true ; do
 			;;
 		S|s)
 			echo "Supprime le compte utilisateur"
-			userdel $user
-			rm -rfd /home/$user
+			userdel $user 2>/dev/null
+			if [[ $? -eq 6 ]] ; then
+				echo "le compte n'existe pas"
+			else
+				rm -rfd /home/$user 2>/dev/null
+			fi
 			;;
 		V|v)
-			grep $user /etc/passwd 1>/dev/null
-			code=$?
-			if [[ $code -eq 0 ]] ; then
+			grep ^$user: /etc/passwd 1>/dev/null
+			if [[ $? -eq 0 ]] ; then
 				echo "l'utilisateur existe"
 			else
 				echo "l'utilisateur n'existe pas"
 			fi
+			;;
+		U|u)
+			read -p "Changement : entrez le nouvel utilisateur : " user trash
 			;;
 		Q|q)
 			echo "Fermeture du programme"
