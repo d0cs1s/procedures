@@ -1,5 +1,14 @@
 #!/bin/bash
 
+##################################################
+# Author : d0cs1s
+##################################################
+# Modification :
+#----------------
+# AUTHOR	DATE		COMMENT
+# d0cs1s	05/07/22	Create script
+###################################################
+
 read -p "Saisir l'identifiant utilisateur souhaité : " user trash
 
 menu()
