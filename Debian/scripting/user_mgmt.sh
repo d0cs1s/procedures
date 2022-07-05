@@ -15,8 +15,6 @@ while [ -z $user ] ; do
 	read -p "Saisir l'identifiant utilisateur souhaité : " user trash
 done
 
-read -p "Saisir l'identifiant utilisateur souhaité : " user trash
-
 menu()
 {
 	echo " GESTION DES UTILISATEURS : $user"
