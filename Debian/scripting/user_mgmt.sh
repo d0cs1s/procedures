@@ -9,6 +9,12 @@
 # d0cs1s	05/07/22	Create script
 ###################################################
 
+user=""
+
+while [ -z $user ] ; do
+	read -p "Saisir l'identifiant utilisateur souhaité : " user trash
+done
+
 read -p "Saisir l'identifiant utilisateur souhaité : " user trash
 
 menu()
@@ -56,7 +62,10 @@ while true ; do
 			fi
 			;;
 		U|u)
-			read -p "Changement : entrez le nouvel utilisateur : " user trash
+			user=""
+			while [ -z $user ] ; do
+				read -p "Saisir l'identifiant utilisateur souhaité : " user trash
+			done
 			;;
 		Q|q)
 			echo "Fermeture du programme"
