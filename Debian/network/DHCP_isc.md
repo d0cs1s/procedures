@@ -135,3 +135,5 @@ dhcrelay -d -id <interfacedownstream> -iu <interfaceupstream> <serveurDHCPajoind
 ```
 
 > Il faut reboot la machine après un lancement en mode debug ou rm /var/run/dhcpd.pid
+
+/TODO enregistrement DNS dynamique
