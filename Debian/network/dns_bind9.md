@@ -128,7 +128,7 @@ La zone inverse de déclare dans le même fichier (named.conf.local) :
 ```bash
 zone "9.168.192.in-addr.arpa" {
   type master;
-  file "db.192.168.9.inv";
+  file "/var/cache/bind/db.192.168.9.inv";
 };
 ```
 > Il faut bien entendu créer le fichier /var/cache/bind/db.192.168.9.inv
