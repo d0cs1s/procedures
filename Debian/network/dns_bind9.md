@@ -126,7 +126,7 @@ rndc reload
 La zone inverse de déclare dans le même fichier (named.conf.local) :
 
 ```bash
-zone "10.168.192.in-addr.arpa" {
+zone "9.168.192.in-addr.arpa" {
   type master;
   file "db.192.168.9.inv";
 };
