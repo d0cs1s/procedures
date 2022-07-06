@@ -40,6 +40,9 @@ nano /etc/dhcp/dhcpd.conf
 option domain-name "masuperzone.local";
 option domain-name-servers 192.168.9.12;
 ...
+# Refuse les adresses MAC en double.
+deny duplicates;
+...
 # Lease time en secondes
 default-lease-time 345600;
 max-lease-time 691200;
