@@ -37,7 +37,7 @@ Passons à la configuration du service : /etc/dhcp/dhcpd.conf
 nano /etc/dhcp/dhcpd.conf
 ...
 # Serveur DNS du réseau
-option domain-name "masuperzone.local"
+option domain-name "masuperzone.local";
 option domain-name-servers 192.168.9.12;
 ...
 # Lease time en secondes
