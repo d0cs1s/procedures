@@ -2,7 +2,7 @@
 # Time library : At the moment it contains :
 # - func_time : Symply print what time is it in a variable $time
 # - func_time_elapsed : Use func_time to start a timer. Put func_time at the beginning of the timer and func_time_elapsed at the end
-#                       Variables return are $time_elapsed_h $time_elapsed_m $time_elapsed_s
+#                       Variables return are $time_elapsed_h $time_elapsed_m $time_elapsed_s // TODO : need to be fixed (minute don't working and hour probably doesn't either)
 #-------------------------------------------------------------------------------------------------------------------------------------
 # Author : d0cs1s
 # Creation date : 2022-07-08
