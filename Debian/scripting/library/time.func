@@ -80,3 +80,6 @@ func_time_elapsed() {
                 else
                         time_elapsed_h=$(expr $time_elapsed_h + 1 )
                         carried=0
+               fi
+        fi
+}
