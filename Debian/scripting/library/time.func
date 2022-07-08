@@ -1,85 +1,75 @@
-#-------------------------------------------------------------------------------------------------------------------------------------
-# Time library : At the moment it contains :
-# - func_time : Symply print what time is it in a variable $time
-# - func_time_elapsed : Use func_time to start a timer. Put func_time at the beginning of the timer and func_time_elapsed at the end
-#                       Variables return are $time_elapsed_h $time_elapsed_m $time_elapsed_s
-#-------------------------------------------------------------------------------------------------------------------------------------
-# Author : d0cs1s
-# Creation date : 2022-07-08
-#--------------------------------------------------------------------------------------------------------------------------------------
-
 func_time() {
-        time=$(date +%H:%M:%S)
+	time=$(date +%H:%M:%S)
 }
 
 # Function to calculate elapsed time. Variables return are $time_elapsed_h $time_elapsed_m $time_elapsed_s
 func_time_elapsed() {
-        # Requires func_time to start the timer
+	# Requires func_time to start the timer
 
-        end_time_hour=$(date +%H)
-        end_time_minute=$(date +%M)
-        end_time_second=$(date +%S)
+	end_time_hour=$(date +%H)
+	end_time_minute=$(date +%M)
+	end_time_second=$(date +%S)
 
-        start_time_hour=$(echo $time | cut -d ":" -f 1)
-        start_time_minute=$(echo $time | cut -d ":" -f 2)
-        start_time_second=$(echo $time | cut -d ":" -f 3)
+	start_time_hour=$(echo $time | cut -d ":" -f 1)	
+	start_time_minute=$(echo $time | cut -d ":" -f 2)	
+	start_time_second=$(echo $time | cut -d ":" -f 3)
+	
+	echo $end_time_second
 
-        echo $end_time_second
+	# Calculation of elapsed seconds, carried if seconds reset from 59 to 0
 
-        # Calculation of elapsed seconds, carried if seconds reset from 59 to 0
+	time_elapsed_s=$(expr $end_time_second - $start_time_second)
+	
+	if [[ "$time_elapsed_s" -lt 0 ]] ; then
+		time_elapsed_s=$(expr 60 + \( $start_time_second - $end_time_second \) \* -1 )
+		carried=1
+	else
+		carried=0
+	fi
+	
+	# Calculation of elapsed minutes, carried if minutes reset from 59 to 0 and check if there's carried for seconds
 
-        time_elapsed_s=$(expr $end_time_second - $start_time_second)
+	time_elapsed_m=$(expr $end_time_minute - $start_time_minute)
 
-        if [[ "$time_elapsed_s" -lt 0 ]] ; then
-                time_elapsed_s=$(expr 60 + \( $start_time_second - $end_time_second \) \* -1 )
-                carried=1
-        else
-                carried=0
-        fi
+	if [[ $carried -eq 0 ]] ; then
 
-        # Calculation of elapsed minutes, carried if minutes reset from 59 to 0 and check if there's carried for seconds
+		if [[ "$time_elapsed_m" -lt 0 ]] ; then
+			time_elapsed_m=$(expr 60 + \( $start_time_minute - $end_time_minute \) \* -1 )
+			carried=1
+		else
+			carried=0
+		fi
+	else
+		if [[ "$time_elapsed_m" -lt 0 ]] ; then
+			time_elapsed_m=$(expr 60 + \( $start_time_minute - $end_time_minute \) \* -1 )
+			time_elapsed_m=$(expr $time_elapsed_m + 1 )
+			carried=1
+		else
+			time_elapsed_m=$(expr $time_elapsed_m + 1 )
+			carried=0
+		fi
+	fi
+	
+	# Calculation of elapsed hours, carried if hours resets from 23 to 0 and check if there's carried for minutes
 
-        time_elapsed_m=$(expr $end_time_minute - $start_time_minute)
+	time_elapsed_h=$(expr $end_time_hour - $start_time_hour)
+	
+	if [[ $carried -eq 0 ]] ; then
 
-        if [[ $carried -eq 0 ]] ; then
-
-                if [[ "$time_elapsed_m" -lt 0 ]] ; then
-                        time_elapsed_m=$(expr 60 + \( $start_time_minute - $end_time_minute \) \* -1 )
-                        carried=1
-                else
-                        carried=0
-                fi
-        else
-                if [[ "$time_elapsed_m" -lt 0 ]] ; then
-                        time_elapsed_m=$(expr 60 + \( $start_time_minute - $end_time_minute \) \* -1 )
-                        time_elapsed_m=$(expr $time_elapsed_m + 1 )
-                        carried=1
-                else
-                        time_elapsed_m=$(expr $time_elapsed_m + 1 )
-                        carried=0
-                fi
-        fi
-
-        # Calculation of elapsed hours, carried if hours resets from 23 to 0 and check if there's carried for minutes
-
-        time_elapsed_h=$(expr $end_time_hour - $start_time_hour)
-
-        if [[ $carried -eq 0 ]] ; then
-
-                if [[ "$time_elapsed_h" -lt 0 ]] ; then
-                        time_elapsed_h=$(expr 60 + \( $start_time_hour - $end_time_hour \) \* -1 )
-                        carried=1
-                else
-                        carried=0
-                fi
-        else
-                if [[ "$time_elapsed_h" -lt 0 ]] ; then
-                        time_elapsed_h=$(expr 60 + \( $start_time_hour - $end_time_hour \) \* -1 )
-                        time_elapsed_h=$(expr $time_elapsed_h + 1 )
-                        carried=1
-                else
-                        time_elapsed_h=$(expr $time_elapsed_h + 1 )
-                        carried=0
-               fi
-        fi
+		if [[ "$time_elapsed_h" -lt 0 ]] ; then
+			time_elapsed_h=$(expr 60 + \( $start_time_hour - $end_time_hour \) \* -1 )
+			carried=1
+		else
+			carried=0
+		fi
+	else
+		if [[ "$time_elapsed_h" -lt 0 ]] ; then
+			time_elapsed_h=$(expr 60 + \( $start_time_hour - $end_time_hour \) \* -1 )
+			time_elapsed_h=$(expr $time_elapsed_h + 1 )
+			carried=1
+		else
+			time_elapsed_h=$(expr $time_elapsed_h + 1 )
+			carried=0
+		fi
+	fi
 }
