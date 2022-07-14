@@ -7,8 +7,6 @@
 # Creation	: 2022-07-07
 # Modification	: -
 
-source ~/scripts/library/time.func
-
 date=$(date +%Y-%m-%d)
 
 func_print_help() {
@@ -21,8 +19,12 @@ func_check_args() {
 	case $1 in
 		-c|--crontab)
 			# Silent mode
-			dd bs=4M if=/dev/mmcblk0 of=/media/partage/backup_img_pi/backup_pi-$date.img
-			pigz /media/partage/backup_imp_pi/backup_test2.img
+			echo "$date - starting backup" >> /var/log/backup_pi.log
+			dd bs=4M if=/dev/mmcblk0 of=/media/partage/backup_img_pi/backup_pi-$date.img &>>/var/log/backup_pi.log
+			sleep 5
+			pigz /media/partage/backup_img_pi/backup_pi-$date.img &>>/var/log/backup_pi.log
+			sleep 1
+			echo "backup - finished" >> /var/log/backup_pi.log
 			;;
 		-v|--verbose)
 			func_verbose_mode
@@ -37,16 +39,17 @@ func_check_args() {
 func_verbose_mode() {
 	read -p "Backup's name ? (without .img) : " name trash
 	echo "Your backup will be located in /media/partage/backup_imp_pi/$name.img"
-	func_time
-	echo "Job started at $time"
+	time=$(date +%H:%M\'%S)
+	echo "Job started at $time" | tee /var/log/backup_pi.log
+	SECONDS=0
 	dd bs=4M if=/dev/mmcblk0 of=/media/partage/backup_img_pi/$name.img status=progress
-	echo "Transfert complete. Start compression ..."
+	echo "Transfert complete. Start compression ..." | tee /var/log/backup_pi.log
 	sleep 2 
 	pigz -v /media/partage/backup_img_pi/$name.img
-	func_time_elapsed
-	func_time
-	echo "Compression complete ! Job finished at $time"
-	echo "Time elapsed : $time_elapsed_h:$time_elapsed_m'$time_elapsed_s"
+	time=$(date +%H:%M\'%S)
+	echo "Compression complete ! Job finished at $time" | tee /var/log/backup_pi.log
+	duration=$SECONDS
+	echo "Time elapsed :$(( $duration / 60 )) minutes and $(( $duration % 60 )) seconds elapsed." |tee /var/log/backup_pi.log
 }
 
 
