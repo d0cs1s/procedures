@@ -28,6 +28,12 @@ Pour initialiser une connexion, le serveur doit disposer de la clé publique de 
 ssh-copy-id profil@172.30.0.254
 ```
 
+#### Bonus Windows
+
+```powershell
+type $env:USERPROFILE\.ssh\id_rsa.pub | ssh -p <port> {user}@{IP-ADDRESS-OR-FQDN} "cat >> .ssh/authorized_keys"
+```
+
 Il y aura potentiellement une demande de confirmation de connexion.
 
 ### Connexion à un serveur
