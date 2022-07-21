@@ -49,17 +49,17 @@ ssh compte@server
 Pour envoyer ou télécharger un fichier depuis/vers un serveur distant :
 
 ```bash
-scp <source> <destination>
+scp <source> <destination> [-p port]
 ```
 
 Exemple de téléchargement d'un fichier :
 
 ```bash
-scp profil@172.30.0.254:/etc/network/interfaces /home/profil/backup/interfaces
+scp  [-P port] profil@172.30.0.254:/etc/network/interfaces /home/profil/backup/interfaces
 ```
 
 Exemple d'upload d'un fichier :
 
 ```bash
-scp /home/profil/backup/interfaces profil@172.30.0.254:/etc/network/interfaces
+scp [-P port] /home/profil/backup/interfaces profil@172.30.0.254:/etc/network/interfaces
 ```
