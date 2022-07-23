@@ -70,4 +70,4 @@ scp [-P port] /home/profil/backup/interfaces profil@172.30.0.254:/etc/network/in
 vim /etc/ssh/sshd_config
 ```
 
-Remplacer le port 22 par n'importe quel port compris entre 1024 et 65535
+Décommenter la ligne "#Port 22" et remplacer le port 22 par n'importe quel port compris entre 1024 et 65535
