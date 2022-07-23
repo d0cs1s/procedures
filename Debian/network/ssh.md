@@ -63,3 +63,11 @@ Exemple d'upload d'un fichier :
 ```bash
 scp [-P port] /home/profil/backup/interfaces profil@172.30.0.254:/etc/network/interfaces
 ```
+
+### Changement du port par défaut
+
+```bash
+vim /etc/ssh/sshd_config
+```
+
+Remplacer le port 22 par n'importe quel port compris entre 1024 et 65535
