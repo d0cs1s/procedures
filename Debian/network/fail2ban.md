@@ -33,7 +33,7 @@ systemctl status fail2ban
 Modifier le fichier /etc/fail2ban/jail.d/defaults-debian.conf pour paramétrer une jail.
 Pour l'exemple on configure une jail ssh :
 
-```bash
+```
 vim /etc/fail2ban/jail.d/defaults-debian.conf
 
 # Configuration du temps de ban avec incrémentation du temps si une ip a déjà été bannie
