@@ -19,7 +19,6 @@ vim /etc/dhcpcd.conf
 # Example static IP configuration:
 interface eth0
 static ip_address=172.16.0.1/16
-#static ip6_address=fd51:42f8:caae:d92e::ff/64
 static routers=172.16.0.254
 static domain_name_servers=127.0.0.1 8.8.8.8
 static domain_name="d0cs1s.home"
