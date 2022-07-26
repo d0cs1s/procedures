@@ -55,6 +55,8 @@ On va travailler sur un exemple, le site intranet.d0cs1s.lcl :
 - Créer le dossier du site web dans /var/www/, ici il faudra bien nommer le dossier intranet.d0cs1s.lcl
 - Importer le site à l'intérieur de ce dossier
 
+note : Dans cette configuration, on déclare notre site web par FQDN avec la mention ServerName. Il est aussi possible de la faire par ip ou par port.
+
 #### Gestion des droits et utilisateurs
 
 Afin de sécuriser l'infrastructure, on va créer un utilisateur par site. Changer les propriétaires et les droits. Procéder comme suivant :
