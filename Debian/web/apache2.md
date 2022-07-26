@@ -70,8 +70,8 @@ usermod -aG intranet www-data
 - Changement des permissions des fichiers et dossiers du site :
 ```bash
 cd /var/www/
-find . -type d -exec chmod 2770 {} \;
-find . -type f -exec chmod 660 {} \;
+find ./intranet.d0cs1s.lcl -type d -exec chmod 2770 {} \;
+find ./intranet.d0cs1s.lcl -type f -exec chmod 660 {} \;
 ```
 
 #### Ajout au DNS
