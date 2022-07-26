@@ -22,4 +22,3 @@ systemctl status apache2.service
 - /etc/apache2/sites-enabled/ : dossier de configuration des virtual host
 - /var/www/html/ : dossier racine par défaut du service web
 
-//TODO virtual host
