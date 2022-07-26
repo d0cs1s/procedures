@@ -22,6 +22,16 @@ systemctl status apache2.service
 - /etc/apache2/sites-enabled/ : dossier de configuration des virtual host
 - /var/www/html/ : dossier racine par défaut du service web
 
+Modifier le ficher /etc/apache2/apache2.conf comme suivant pour désactiver l'index.of et les symlinks :
+
+```bash
+<Directory />
+  Options -FollowSymLinks -Indexes
+  AllowOverride None
+  Require all denied
+</Directory>
+```
+
 Modifier le fichier de configuration /etc/apache2/mods-enabled/dir.conf : 
 ```
 <IfModule mod_dir.c>
