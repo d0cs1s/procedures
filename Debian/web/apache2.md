@@ -39,7 +39,7 @@ Modifier le fichier de configuration /etc/apache2/mods-enabled/dir.conf :
 </IfModule>
 ```
 Quand apache2 cherche la page d'index du site, il commence par chercher index.html puis index.cgi etc. Si vos sites n'utilisent que index.php, enlever les autres types de fichiers.
-Ceci afin d'empêcher un attaquant d'envoyer et de faire afficher un fichier index.html par exemple
+Ceci afin d'empêcher un attaquant d'envoyer et de faire afficher un fichier index.html par exemple. Dans tous les cas, enlever index.cgi et index.pl
 
 ## Configuration d'un nouveau site
 
