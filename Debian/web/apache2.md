@@ -22,8 +22,6 @@ systemctl status apache2.service
 - /etc/apache2/sites-enabled/ : dossier de configuration des virtual host
 - /var/www/html/ : dossier racine par défaut du service web
 
-### Sécurisation d'apache2
-
 Modifier le fichier de configuration /etc/apache2/mods-enabled/dir.conf : 
 ```
 <IfModule mod_dir.c>
