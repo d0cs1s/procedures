@@ -5,10 +5,10 @@ Il n'y a rien d'obligatoire à respecter cette façon de faire :
 
 ```bash
 tree -d /etc/ssl
-|--certs      # Les certificats venant d'autorité de certifications connus
-|--certs-auto # Les certificats auto-signés
-|--private    # Emplacement des clés privées
-|--reqs       # Emplacement des demandes de signatures de certificats
+|-certs      # Les certificats venant d'autorité de certifications connus
+|-certs-auto # Les certificats auto-signés
+|-private    # Emplacement des clés privées
+|-reqs       # Emplacement des demandes de signatures de certificats
 ```
 
 ## Création d'un certificat autosigné
@@ -67,9 +67,9 @@ openssl x509 -noout -in /etc/ssl/certs-auto/intranet.d0cs1s.lcl.cert -subject
 
 autres options : 
 
--dates : pour connaître sa période de validité
--hash : afficher la valeur de hashage
--fingerprint : afficher l'empreinte MD5
+- dates : pour connaître sa période de validité
+- hash : afficher la valeur de hashage
+- fingerprint : afficher l'empreinte MD5
 
 ## Création d'un certificat par autorité de certification interne (PKI)
 
