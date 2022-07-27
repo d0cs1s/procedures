@@ -80,6 +80,7 @@ usermod -aG intranet www-data
 cd /var/www/
 find ./intranet.d0cs1s.lcl -type d -exec chmod 2770 {} \;
 find ./intranet.d0cs1s.lcl -type f -exec chmod 660 {} \;
+chown -R intranet: intranet.d0cs1s.lcl
 ```
 
 ### Ajout au DNS
