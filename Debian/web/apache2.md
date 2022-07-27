@@ -127,3 +127,20 @@ Il faudra aussi activer le site par défaut sur le port 443. Il conviendra de re
 ```
 a2ensite 000-default-ssl
 ```
+
+On peut maintenant modifier la configuration du virtualhost écoutant sur le port 80 pour effectuer une redirection vers le port 443 :
+  
+```bash
+<VirtualHost *:80>
+
+  ServerName intranet.d0cs1s.lcl
+  DocumentRoot /var/www/intranet.d0cs1s.lcl
+  
+  Redirect Permanent / https://intranet.d0cs1s.lcl
+
+  <Directory /var/www/intranet.d0cs1s.lcl >
+    Require all granted
+  </Directory>
+
+</VirtualHost>
+```
