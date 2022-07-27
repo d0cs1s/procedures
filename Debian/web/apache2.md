@@ -65,7 +65,7 @@ On va travailler sur un exemple, le site intranet.d0cs1s.lcl :
 
 note : Dans cette configuration, on déclare notre site web par FQDN avec la mention ServerName. Il est aussi possible de la faire par ip ou par port.
 
-#### Gestion des droits et utilisateurs
+### Gestion des droits et utilisateurs
 
 Afin de sécuriser l'infrastructure, on va créer un utilisateur par site. Changer les propriétaires et les droits. Procéder comme suivant :
 
@@ -82,8 +82,48 @@ find ./intranet.d0cs1s.lcl -type d -exec chmod 2770 {} \;
 find ./intranet.d0cs1s.lcl -type f -exec chmod 660 {} \;
 ```
 
-#### Ajout au DNS
+### Ajout au DNS
 
 Il ne faut pas oublier de rajouter un champ A au DNS
 
 intranet  A <ip_du_serveur_web>
+
+## Prise en charge de https
+
+### Configuration du site
+
+Dans un premier temps, il faudra obtenir un certificat SSL/TLS soit auprès d'une autorité (Let's Encrypt), soit en l'auto-signant. Cf la procédure openssl
+
+Dans le fichier de configuration du site /etc/apache2/sites-available/<monsite> : 
+
+```
+<VirtualHost *:443>
+  DocumentRoot /var/www/intranet.d0cs1s.lcl
+  ServerName intranet.d0cs1s.lcl
+  
+  SSLEngine on
+  SSLCertificateKeyFile /etc/ssl/private/<monsite.key>
+  SSLCertificateFile /etc/ssl/certs-auto/<monsite.cert>
+  SSLProtocol all -SSLv3 -TLSv1 -TLSv1.1
+  
+  Protocols h2 http/1.1
+  
+  Header always set Strict-Transport-Security "max-age=63072000"
+  
+  <Directory /var/www/<monsite>
+    Options MultiViews
+    AllowOverride None
+    Require all granted
+  </Directory>
+</VirtualHost>
+```
+  
+Il faudra activer les modules ssl et les modules headers :
+```
+a2enmod ssl headers
+```
+  
+Il faudra aussi activer le site par défaut sur le port 443. Il conviendra de renommer le fichier /etc/apache2/sites-available/default-ssl en 000-default-ssl puis : 
+```
+a2ensite 000-default-ssl
+```
