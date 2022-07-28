@@ -145,3 +145,27 @@ On peut maintenant modifier la configuration du virtualhost écoutant sur le por
 
 </VirtualHost>
 ```
+
+## Changement du header
+  
+Afin de cacher l'information du champ serveur dans le header des requêtes : 
+- Installer le module security2
+- Ajouter une ligne SecServerSignature à /etc/apache2/mods-available/security2.conf
+ 
+```bash
+apt install libapache2-mod-security2
+vim /etc/apache2/mods-available/security2.conf
+<IfModule security2_module>
+        # Default Debian dir for modsecurity's persistent data
+        SecDataDir /var/cache/modsecurity
+        SecServerSignature d0cs1s
+        # Include all the *.conf files in /etc/modsecurity.
+        # Keeping your local configuration in that directory
+        # will allow for an easy upgrade of THIS file and
+        # make your life easier
+        IncludeOptional /etc/modsecurity/*.conf
+
+        # Include OWASP ModSecurity CRS rules if installed
+        IncludeOptional /usr/share/modsecurity-crs/*.load
+</IfModule>
+```
