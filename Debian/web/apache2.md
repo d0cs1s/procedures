@@ -169,3 +169,25 @@ vim /etc/apache2/mods-available/security2.conf
         IncludeOptional /usr/share/modsecurity-crs/*.load
 </IfModule>
 ```
+
+## Troubleshooting
+
+### Problème d'activation d'http2
+  
+Vérifier le header avec :
+```bash
+curl --head https://intranet.d0cs1s.lcl
+```
+
+Si celui-ci ne retourne pas HTTP/2 200, contrôler si le module mpm_prefork est présent et activer. Si c'est le cas, c'est lui qui pose problème.
+Résolution :
+```bash
+apt install php7.4-fpm
+a2enconf php7.4-fpm
+systemctl restart php7.4-fpm.service
+a2dismod mpm_prefork
+systemctl restart apache2 # Il se peut que le service ne redémarre pas ici, continuer la procédure
+a2enmod mpm_event
+systemctl restart apache2.service
+```
+L'incident devrait être désormais réglé.
