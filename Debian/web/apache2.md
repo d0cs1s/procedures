@@ -190,4 +190,4 @@ systemctl restart apache2 # Il se peut que le service ne redémarre pas ici, con
 a2enmod mpm_event
 systemctl restart apache2.service
 ```
-L'incident devrait être désormais réglé.
+L'incident devrait être désormais réglé. Recontrôler avec curl
