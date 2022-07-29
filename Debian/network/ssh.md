@@ -18,7 +18,7 @@ ssh-keygen -b 8192
 ```
 
 - Touche entrée pour valider l'emplacement par défaut du fichier (/home/profil/.ssh/id_rsa par défaut)
-- Entrer un mot de passe (facultatif)
+- Entrer un mot de passe (facultatif mais fortement conseillé)
 
 ### Copie de la clé publique
 
@@ -64,6 +64,8 @@ Exemple d'upload d'un fichier :
 scp [-P port] /home/profil/backup/interfaces profil@172.30.0.254:/etc/network/interfaces
 ```
 
+## Sécurité
+
 ### Changement du port par défaut
 
 ```bash
@@ -71,3 +73,38 @@ vim /etc/ssh/sshd_config
 ```
 
 Décommenter la ligne "#Port 22" et remplacer le port 22 par n'importe quel port compris entre 1024 et 65535
+
+### Changement de l'ip d'écoute
+
+Par défaut, ssh écoute sur 0.0.0.0. Réduire le scope en mettant l'adresse ip avec laquelle on se connecte (ou un range d'adresse).
+
+### Régler l'idle timeout
+
+```
+ClientAliveInterval 600
+ClientAliveCountMax 0
+```
+
+### Autorisation par user ou group
+
+Il est possible de ne laisser la possibilité de connexion qu'à un utilisateur ou un groupe particulier : 
+
+```bash
+AllowUsers <user>
+ou
+AllowGroups <group>
+```
+
+### Interdire la connexion en root
+
+```bash
+PermitRootLogin No
+```
+
+### Interdire la connexion par simple mot de passe
+
+Une fois la clé publique du client sur le serveur. Il peut être bien de désactiver la connexion par mot de passe, pour ne permettre que la connexion par clé privée/publique :
+
+```bash
+PasswordAuthentication no
+```
