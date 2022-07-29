@@ -74,3 +74,14 @@ autres options :
 ## Création d'un certificat par autorité de certification interne (PKI)
 
 ## Création d'un certificat Let's Encrypt
+
+### Prérequis
+
+```bash
+apt install snapd
+snap install core
+snap refresh core
+snap install --classic certbot
+ln -s /snap/bin/certbot /usr/bin/certbot
+certbot --rsa-key-size 4096 --apache
+```
