@@ -14,7 +14,7 @@ apt install openssh-server
 Côté client il faut générer une clé :
 
 ```bash
-ssh-keygen
+ssh-keygen -b 8192
 ```
 
 - Touche entrée pour valider l'emplacement par défaut du fichier (/home/profil/.ssh/id_rsa par défaut)
