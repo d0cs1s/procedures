@@ -3,31 +3,31 @@
 
 - Debian 10 ou 11
 - Apache2
-- php7.3 ou php7.4
+- php7.3 ou php7.4 (php7.4 sur Debian 11)
 - MariaDB-server
 - php-apcu-bc
 - php-cas
 
-### Extensions php requises
+### Installation des prérequis
 
-- mysql
-- mbstring
-- curl
-- gb
-- xml
-- ldap
-- xmlrpc
-- imap
-- intl
-- zip
-- bz2
+Pour Debian 10 :
+
+```bash
+apt install apache2 php7.3 php7.3-mysql php7.3-mbstring php7.3-curl php7.3-gb php7.3-xml php7.3-ldap php7.3-xmlrpc php7.3-imap php7.3-intl php7.3-zip php7.3-bz2 mariadb-server php-apcu-bc php-cas
+```
+
+Pour Debian 11 : 
+
+```bash
+apt install apache2 php7.4 php7.4-mysql php7.4-mbstring php7.4-curl php7.4-gb php7.4-xml php7.4-ldap php7.4-xmlrpc php7.4-imap php7.4-intl php7.4-zip php7.4-bz2 mariadb-server php-apcu-bc php-cas
+```
 
 ## Configuration de la base de données
 
 ```bash
 mysql_secure_installation
 
-Change the root password? Y
+Change the root password? Y # Entrer un nouveau mot de passe
 Remove anonymous users? Y
 Disallow root login remotely? Y
 Remove test database and anccess to it? [Y/n]
@@ -64,6 +64,10 @@ GLPI va nécessiter la création de plusieurs répertoire :
 - /var/www/glpi.mondomain.tld
 - /var/lib/glpi
 - /var/log/glpi
+
+```bash
+mkdir -p /etc/glpi,/var/{lib/glpi,log/glpi,www/glpi.mondomain.tlk}
+```
 
 Créer un utilisateur pour glpi, changer le propriétaire des dossiers et mettre l'user www-data dans le groupe glpi :
 
