@@ -173,7 +173,7 @@ Si tout a été fait correctement, il suffit de :
 
 Il faudra ensuite changer les mots de passes des comptes par défaut (ou les désactiver) :
 
-- glpi / glpi # Attention de créer un compte admin avant de supprimer ou désactiver ce compte
+- glpi / glpi # Attention de créer un compte admin avant de désactiver ce compte
 - tech / tech
 - normal / normal
 - post-only / postonly
