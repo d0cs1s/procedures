@@ -161,7 +161,7 @@ glpi  A <ip_du_serveur_glpi>
 Il est maintenant possible de continuer la configuration de glpi à l'adresse http://glpi.mondomain.tld
 Se rendre à l'adresse pour terminer la configuration de glpi.
 
-Si tout a été fait correctement, il suffit de renseigner les informations de la base de données. Il faudra ensuite changer les mots de passes des comptes par défaut :
+Si tout a été fait correctement, il suffit de renseigner les informations de la base de données. Il faudra ensuite changer les mots de passes des comptes par défaut (ou les désactiver) :
 
 - glpi / glpi
 - tech / tech
