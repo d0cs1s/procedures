@@ -68,7 +68,7 @@ GLPI va nécessiter la création de plusieurs répertoire :
 Créer un utilisateur pour glpi, changer le propriétaire des dossiers et mettre l'user www-data dans le groupe glpi :
 
 ```bash
-useradd -s /bin/false -d /var/www/glpi.mondomain.tld
+useradd -s /bin/false -d /var/www/glpi.mondomain.tld glpi
 usermod -aG glpi www-data
 find /var/www/glpi.mondomain.tld -type d -exec chmod 2770 {} \;
 find /var/www/glpi.mondomain.tld -type f -exec chmod 660 {} \;
