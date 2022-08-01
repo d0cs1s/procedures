@@ -45,7 +45,7 @@ Créer un nouvel utilisateur pour la bdd :
 
 ```bash
 Mysql> CREATE USER 'glpi'@'localhost' IDENTIFIED BY 'motdepassecomplexe';
-Mysql> GRANT ALL PRIVILEGES ON glpidata.* TO glpi@localhost IDENTIFIED BY 'motdepassecomplexe';
+Mysql> GRANT ALL PRIVILEGES ON glpidb.* TO glpi@localhost IDENTIFIED BY 'motdepassecomplexe';
 ```
 
 Vérification des droits pour pour l'utilisateur glpi :
