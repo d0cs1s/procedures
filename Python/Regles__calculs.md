@@ -5,7 +5,7 @@
 * : pour la multiplication
 ** : pour les puissances
 / : pour la division (toujours float)
-// : pour la division (toujours integer)
+// : pour la division (toujours integer sauf si float utilisé dans le calcul)
 ```
 
 ## Entier, flottants, notation scientifique et bases
