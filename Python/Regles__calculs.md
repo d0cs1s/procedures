@@ -6,6 +6,7 @@
 ** : pour les puissances
 / : pour la division (toujours float)
 // : pour la division (toujours integer sauf si float utilisé dans le calcul)
+% : modulo (reste de la division euclidienne)
 ```
 
 ## Entier, flottants, notation scientifique et bases
