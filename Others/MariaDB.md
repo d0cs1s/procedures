@@ -138,3 +138,5 @@ exemple :
 ```mysql
 SELECT AVG(age) FROM clients;
 ```
+
+// TODO Jointures internes (INNER JOIN)
