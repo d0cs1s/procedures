@@ -93,4 +93,48 @@ SELECT <attribut1>, <attribut2> FROM <table> WHERE (attributx >= '2' AND attribu
 - XOR : ou exclusif (ou mais pas les 2)
 - NOT : n'est pas, non, sauf
 
-// TODO tri en sortie, limit et offset, compter, alias, max / min / somme / moyenne
+### Trier les données
+
+Il est possible de trier les données en fonction de la colonne choisie par ordre croissant ( par défaut ) ou décroissant : 
+
+```mysql
+SELECT <attribut1>, <attribut2> FROM <table> ORDER BY <attribut1>[, <éventuel_2è_attribut>];
+```
+
+### Nombre de lignes à afficher
+
+Restreindre le nombre de ligne à afficher avec LIMIT. Il est possible de commencer à compter à partir d'une certaine ligne avec OFFSET :
+
+```mysql
+SELECT <attribut1> FROM <table> ORDER BY <attributx> LIMIT '2' OFFSET '1';
+```
+
+### Compter 
+
+Pour compter le nombre de ligne d'un résultat :
+
+```mysql
+SELECT COUNT(attribut) FROM <table>;
+```
+
+> Donne le nombre de ligne contenant l'attribut sélectionné. Ici le NULL n'est donc pas pris en compte
+
+### Modifier le nom d'un attribut à l'affichage 
+
+Avec la commande AS : 
+
+```mysql
+SELECT <attribut1> as <nom_d'affichage_souhaité> FROM <table>;
+```
+
+### Traitement (max / min / somme / moyenne)
+
+- MAX : valeur maximum d'une colonne sélectionnée
+- MIN : valeur minimum
+- SUM : somme des valeurs d'une colonne
+- AVG : moyenne d'une colonne
+
+exemple :
+```mysql
+SELECT AVG(age) FROM clients;
+```
