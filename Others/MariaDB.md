@@ -41,7 +41,7 @@ CREATE DATABASE nouvelle_database;
 #### Ajout des droits au nouvel utilisateur
 
 ```mysql
-GRANT ALL PRIVILEGES ON nouvelle_database* TO 'user'@'localhost';
+GRANT ALL PRIVILEGES ON nouvelle_database.* TO 'user'@'localhost' IDENTIFIED BY 'motdepassecomplexe';
 FLUSH PRIVILEGES;
 ```
 
