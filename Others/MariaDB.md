@@ -24,6 +24,26 @@ Reload privilege tables now? Y
 ```bash
 mysql -u <user> -p
 ```
+### Ajouter un nouvel utilisateur, une bdd et les droits
+
+#### Ajout utilisateur
+
+```mysql
+CREATE USER 'user'@'localhost' IDENTIFIED BY 'motdepassecomplexe';
+```
+
+#### Création de la base
+
+```mysql
+CREATE DATABASE nouvelle_database;
+```
+
+#### Ajout des droits au nouvel utilisateur
+
+```mysql
+GRANT ALL PRIVILEGES ON nouvelle_database* TO 'user'@'localhost';
+FLUSH PRIVILEGES;
+```
 
 ### Lister les bases de données
 
