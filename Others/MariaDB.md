@@ -72,7 +72,7 @@ Une fois connecté à une base de données, pour lister les tables présentes :
 SHOW tables;
 ```
 
-### Ajouter du contenu
+### Ajouter/modifier du contenu
 
 //TODO
 
