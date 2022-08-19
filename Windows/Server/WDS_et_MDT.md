@@ -228,7 +228,7 @@ SkipAdminPassword=YES
 AdminPassword=Pa$$w0rd
 
 SkipComputerName=YES
-OSDComputerName=Clin-vx
+OSDComputerName=W10-#Right("%UUID%",6)#
 SkipDomainMembership=YES
 JoinDomain=d0cs1s.tld
 MachineObjectOU=OU=ordi,OU=ent_d0cs1s,DC=d0cs1s,DC=tld
