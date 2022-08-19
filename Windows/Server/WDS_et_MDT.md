@@ -191,7 +191,7 @@ Pour automatiser le déploiement, on s'appuye sur deux fichiers de réponse *Boo
 Bootstrap.ini : Automatise l'image de boot WinPE
 CustomSettings.ini : Automatise l'image d'installation
 
-Après modification de ces fichiers :
+Après modification du fichier Bootstrap.ini :
 - Dans MDT : Clic-droit sur MDT Deployment Share -> Update Deployment Share
 - Dans WDS : Remplacer l'image de démarrage par celle générée dans le dossier MDT
 
