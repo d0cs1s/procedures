@@ -195,6 +195,10 @@ Après modification du fichier Bootstrap.ini :
 - Dans MDT : Clic-droit sur MDT Deployment Share -> Update Deployment Share
 - Dans WDS : Remplacer l'image de démarrage par celle générée dans le dossier MDT
 
+Pour déployer également des applications :
+- Les ajouter dans le conteneur *Applications* de MDT
+- Ajouter les GUID des applications dans le fichiers de réponse CustomSettings.ini (cf l'exemple ci-dessous)
+
 Exemple de bootstrap.ini : 
 ```
 [Settings]
@@ -226,6 +230,13 @@ SkipApplications=YES
 SkipAppsOnUpgrade=YES
 SkipAdminPassword=YES
 AdminPassword=Pa$$w0rd
+
+;Applications
+SkipApplications=YES
+;FF
+Applications001={9f96d4ea-e2c3-41f1-bed7-e8304ca0fb58}
+;Tools
+Applications002={1ca15cf5-dd47-4357-981b-d964d0507aba}
 
 SkipComputerName=YES
 OSDComputerName=W10-#Right("%UUID%",6)#
