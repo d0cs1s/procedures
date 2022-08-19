@@ -248,5 +248,5 @@ SkipSummary=YES
 SkipProductKey=YES
 ```
 
-> Pour accéder à une cmd avec WDS lors du déploiement -> Shift+F10
+> Pour accéder à une cmd avec WDS lors du déploiement -> Shift+F10 <br>
 > Pour accéder à une cmd avec MDT lors du déploiement -> F8
