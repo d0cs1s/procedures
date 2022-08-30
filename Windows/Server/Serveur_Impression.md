@@ -3,9 +3,12 @@
 
 ### Plusieurs réglages d'impression
 
-Installer les pilotes
+Dans la console de management de la gestion d'imprimante :
 
-Installer un port. Pour installer un port rapidement et éviter le check de Windows, on peut le faire en PowerShell
+- Installer les pilotes
+- Installer un port
+
+Pour installer un port rapidement et éviter le check de Windows, on peut le faire en PowerShell
 
 ```shell
 Add-PrinterPort -ComputerName "NomDeLaMachine" -Name "NomDuPort" -PrinterHostAddress "192.168.1.48"
