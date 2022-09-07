@@ -22,8 +22,9 @@ Reload privilege tables now? Y
 ### Se connecter à mariadb
 
 ```bash
-mysql -u <user> -p
+mysql -u <user> -p -h <ip_serveur_distant>
 ```
+
 ### Ajouter un nouvel utilisateur, une bdd et les droits
 
 #### Ajout utilisateur
