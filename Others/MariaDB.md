@@ -171,4 +171,8 @@ SELECT AVG(age) FROM clients;
 
 ### Ajouter/modifier du contenu
 
-//TODO
+La commande de base pour la modification d'une valeur dans une table est la suivante :
+
+```mysql
+UPDATE <nom_de_la_table> SET <nom_de_la_colonne> = 'nouvelle_valeur' WHERE <condition>
+```
