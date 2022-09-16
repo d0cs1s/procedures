@@ -79,6 +79,14 @@ SHOW tables;
 
 ## La commande SELECT
 
+### Lister les colonnes d'une table
+
+Pour lister les colonnes d'une table afin d'y voir plus clair :
+
+```mysql
+SHOW COLUMNS FROM <nom_de_la_table>;
+```
+
 ### Lister les données d'une table
 
 Pour lister l'ensemble des données d'une table, avec tous les attributs :
