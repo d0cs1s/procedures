@@ -73,10 +73,6 @@ Une fois connecté à une base de données, pour lister les tables présentes :
 SHOW tables;
 ```
 
-### Ajouter/modifier du contenu
-
-//TODO
-
 ## La commande SELECT
 
 ### Lister les colonnes d'une table
@@ -169,3 +165,10 @@ SELECT AVG(age) FROM clients;
 ```
 
 // TODO Jointures internes (INNER JOIN)
+
+
+## La commande UPDATE
+
+### Ajouter/modifier du contenu
+
+//TODO
