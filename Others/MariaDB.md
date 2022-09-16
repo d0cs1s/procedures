@@ -176,3 +176,11 @@ La commande de base pour la modification d'une valeur dans une table est la suiv
 ```mysql
 UPDATE <nom_de_la_table> SET <nom_de_la_colonne> = 'nouvelle_valeur' WHERE <condition>
 ```
+
+### Uppercase les données d'une colonne
+
+```mysql
+UPDATE <table> SET <colonne> = CONCAT(UCASE(LEFT(<colonne>, 1)), LCASE(SUBSTRING(<colonne>, 2)));
+```
+
+> Ici on modifie la première lettre pour en faire une majuscule et le reste en minuscule
