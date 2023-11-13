@@ -8,9 +8,9 @@
 from tkinter import *
 from phue import Bridge
 
-b = Bridge('172.16.0.25')
+b = Bridge('172.19.0.168')
 
-# Décommenter la ligne suivante avant le 1er lancement du programme
+# Décommenter la ligne suivante et appuyer sur le bridge avant le 1er lancement du programme
 #b.connect()
 
 # Fenêtre principale
