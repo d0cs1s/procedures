@@ -1,0 +1,8 @@
+b = Bridge('IP')
+sensors = b.get_sensor_objects('name')
+
+print(sensors['Hue temperature sensor 1'].state
+
+data = {'temperature': sensors['Hue temperature sensor 1'].state['temperature']/100}
+print(data)
+{'temperature': 16.29}
